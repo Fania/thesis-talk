@@ -1,0 +1,31 @@
+
+    62 title
+  1023 contents
+     9 part 0
+   234 abstract
+   345 acknowledgements
+   150 publications
+    11 part 1
+  1924 introduction
+  3029 inspirations
+  2958 methodology
+    15 part 2
+  4816 pataphysics
+  6097 creativity
+  7146 technology
+  4365 evaluation
+    13 part 3
+  3435 foundation
+  4607 interpretation
+    13 part 4
+  7063 implementation
+  2481 applications
+     9 part 5
+ 11642 analysis
+  2837 aspirations
+    13 part 6
+   754 observations
+     9 part 7
+
+
+ 65060 total
