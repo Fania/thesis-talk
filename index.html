@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 		<script type="text/javascript" async
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -45,6 +45,9 @@
 		<![endif]-->
 
 		<style>
+      small {
+        color: gray;
+      }
 			.reveal blockquote {
 				padding: 0.5em;
 				width: 80%;
@@ -83,13 +86,17 @@
 			.halfimg {
 				max-width: 40%;}
 
+      .highlight, h1, h2 {
+        color: #8b7c69;
+      }
+
 			.end {
 				height: 250px;}
 		</style>
 
 	</head>
 
-	<body>
+  <body>
 
 		<div class="reveal">
 
@@ -98,8 +105,8 @@
 
 				<!--
 				<section data-markdown>
-					<script type="text/template">
-					</script>
+					<textarea data-template>
+					</textarea>
 				</section>
 
 				data-background="imgs/chrome-creative-glitch-small.png"
@@ -107,116 +114,149 @@
 
 				<!--<section data-markdown data-background="imgs/dave1.png">-->
 				<section data-markdown>
-					<script type="text/template">
-						# Thesis Design
+					<textarea data-template>
+# Thesis Design
 
-						## Dr. [Fania Raczinski](http://fania.uk)
-					</script>
+## Dr. [Fania Raczinski](http://fania.uk)
+					</textarea>
 				</section>
 
 				<section data-markdown>
-					<script type="text/template">
-						# *
+					<textarea data-template>
+# *
 
-						My PhD was not **practice-based**.
-					</script>
+My PhD was not **practice-based**.
+					</textarea>
+				</section>
+
+        <section data-markdown>
+					<textarea data-template>
+## Topic / Title
+
+### Algorithmic Meta-Creativity
+
+Creative Computing and Pataphysics  
+for Computational Creativity
+					</textarea>
 				</section>
 
 				<section data-markdown>
-					<script type="text/template">
-						## Journey
+					<textarea data-template>
+## Journey
 
-						- started October 2010 fulltime
-						- 1 year interuption 2014 - 2015
-						- started writing thesis in March 2015
-						- submitted thesis in December 2016
-						- viva in June 2017
-						- submitted corrections September 2017
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Topic / Title
-
-						### Algorithmic Meta-Creativity
-						
-						Creative Computing and Pataphysics  
-						for Computational Creativity
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Deliverables
-
-						**Thesis** - [dr.physics.wtf](https://dr.physics.wtf)  
-						**Artefact** - [pata.physics.wtf](https://pata.physics.wtf)
-					</script>
-				</section>
-									
-				<!-- <section>
-					<img class="fullimg" src="imgs/sally.jpeg" alt="spiralart">
-					<aside class="notes">
-					</aside>
-				</section> -->
-
-				<section data-markdown>
-					<script type="text/template">
-						## [Artefact](https://pata.physics.wtf)
-
-						![pata.physics.wtf](imgs/proto3screen.png)
-					</script>
+- started October 2010 fulltime
+- 1 year interuption 2014 - 2015
+- started writing thesis in March 2015
+- submitted thesis in December 2016
+- viva in June 2017
+- submitted corrections September 2017
+					</textarea>
 				</section>
 
 				<section>
-					<section data-markdown>
-						<script type="text/template">
-							## [Thesis](https://dr.physics.wtf/files/FR-thesis-small.pdf)
+<h2>Deliverables</h2>
+
+<strong>Thesis</strong> - 
+<a href="https://dr.physics.wtf/files/FR-thesis-small.pdf">pdf</a> + <a href="https://dr.physics.wtf">web</a>*<br>
+
+<strong>Artefact</strong> - 
+<a href="https://pata.physics.wtf">pata.physics.wtf</a><br><br>
+
+<small>* Web version created in preparation for viva</small>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+## [Artefact](https://pata.physics.wtf)
+
+![pata.physics.wtf](imgs/proto3screen.png)
+					</textarea>
+				</section>
+
+
+<section>
+
+<section data-markdown><textarea data-template>
+## [Thesis](https://dr.physics.wtf/files/FR-thesis-small.pdf)
               
 - written in [LaTeX](https://www.latex-project.org/) 
-- 8 parts, 14 chapters, 5 appendices ([Paris Metro](https://parisbytrain.com/wp-content/uploads/2014/01/paris-metro-mini-map-2014.pdf)) 
+- 14 chapters, 5 appendices, in 8 parts ([Paris Metro](https://parisbytrain.com/wp-content/uploads/2014/01/paris-metro-mini-map-2014.pdf)) 
 - ~ 60k words (without references + appendices)
 - 411 pages (262 without references + appendices)
 - see [regulations](http://www.dmu.ac.uk/documents/research-documents/graduate-school/cop-update-feb-2018/regulations/15.-presentation-of-thesis.pdf)
-						</script>
-					</section>
+</textarea></section>
+
+<section data-markdown><textarea data-template>
+## [Organisation](https://dr.physics.wtf/html/contents.html)
+              
+**[classic thesis structure:](https://www.vitae.ac.uk/doing-research/doing-a-doctorate/completing-your-doctorate/writing-and-submitting-your-doctoral-thesis/structuring-your-thesis)**
+
+- Introduction
+- Methodology
+- State of the Art
+- Claims / Contributions
+- Critical Analysis / Evaluation
+- Conclusion
+</textarea></section>
+        
+          <section data-markdown>
+            <textarea data-template>
+## [More Contents](https://dr.physics.wtf/html/contents.html)
+
+- Related Work / Inspirations
+- Theory & Practice
+- Applications
+- Future Work
+          	</textarea>
+          </section>
 
           <section data-markdown>
-						<script type="text/template">
-							## [Chapters](https://dr.physics.wtf/contents.html)
-              
-> methodology, state of the art, claims, and evaluation
+						<textarea data-template>
+## [Core Contributions](https://dr.physics.wtf/html/contents.html)
 
-- 
-
-
-						</script>
-					</section>
-
-          <section data-markdown>
-						<script type="text/template">
-							## [Contributions](https://dr.physics.wtf/html/contents.html)
-              
-> describing **process** and **product**  
+> describe **process** and **product**  
 > in relation to new knowledge
 
-- publications (3 conferences, 1 journal)
 
-						</script>
+						</textarea>
 					</section>
 
           <section data-markdown>
-						<script type="text/template">
-							## [Exhibitions](https://dr.physics.wtf/html/applications.html#s:talks)
-              
+						<textarea data-template>
+## [Evaluation / Analysis](https://dr.physics.wtf/html/analysis.html)
+
+*Subjectivity* <i class="fas fa-arrow-circle-right highlight"></i> *Objectivity*
+
+**theoretical / practical / philosophical**
+
+No quantitative data analysis (e.g. questionnaires).
+
+each decision was analysed retrospectively in minute detail (numbers, numbers, numbers) 
+
+(e.g. [Fig. 12.1](https://dr.physics.wtf/html/analysis.html#fig:12.1), [Tab. 12.3](https://dr.physics.wtf/html/analysis.html#tab:12.3), [Tab. 12.4](https://dr.physics.wtf/html/analysis.html#tab:12.4))
+
+
+Note: 
+10k words for this chapter
+
+taking pieces out of the context of the subjective artwork and analyse them objectively
+
+meronym anectode (during analysis I found that i should have included meronyms and added that into the artefact then)
+						</textarea>
+					</section>
+
+          <section data-markdown>
+						<textarea data-template>
+## [Publications / Exhibitions](https://dr.physics.wtf/html/applications.html#s:talks)
+
+- publications (3 conferences, 1 journal)
 - IOCT postgrad showcase @ Innovation Centre (June 2016)
 - IOCT talk for [CAS](http://interactdigitalarts.uk/cas) @ Phoenix (Oct 2015)
 - IOCT LMS launch showcase @ DMU (Nov 2014)
 - IOCT PhD showcase @ Phoenix Cube (Aug 2014)
 - TDC talk @ DMU (Feb 2013)
 
-						</script>
+						</textarea>
 					</section>
 
 					<section>
@@ -276,11 +316,11 @@
 
 				<section>
 					<section data-markdown>
-						<script type="text/template">
-							## [Corrections](http://pamatamap.com)
+						<textarea data-template>
+## [Corrections](http://pamatamap.com)
 
-							![pamatamap.com](imgs/map.jpeg)
-						</script>
+![pamatamap.com](imgs/map.jpeg)
+						</textarea>
 					</section>
 
 					<section>
