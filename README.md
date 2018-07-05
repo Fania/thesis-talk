@@ -1,4 +1,3 @@
-# Fania PhD Viva Voce Presentation
+# Thesis Design
 
-
-This presentation uses [reveal.js](http://lab.hakim.se/reveal-js/).
+Fania Raczinski
