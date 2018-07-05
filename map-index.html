@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhD Map</title>
+
+  <!-- SEO -->
+  <meta name="description" content="An interactive map of Fania Raczinski's PhD thesis.">
+  
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PhD Map"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="images/technology-zoomed.png"/>
+  <meta property="og:image:alt" content="A cutout section of the PhD map."/>
+  <meta property="og:url" content="http://pamatamap.com"/>
+  <meta property="og:description" content="An interactive map of Fania Raczinski's PhD thesis."/>
+    
+
+
+  <!-- MAP/SPIRAL FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/manifest.json">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#54668c">
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+  <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#54668c">
+
+
+
+
+  <link rel="stylesheet" href="map-styles.css">
+  <base target="_parent">
+</head>
+<body>
+
+
+<!-- width="900px" height="100%" -->
+<!-- for full screen width use min-width="100%" min-height="100%" -->
+<!-- width="1000px" height="100%" -->
+<!-- Created by hand with Fania's sweat and tears -->
+<svg id="map-svg" viewBox="0 0 730 535">
+
+
+  <!-- DEFINITIONS -->
+  <defs>
+    <rect id="station-rect" width="1.3436906" height="2.2674301" />
+    <circle id="exchange-circle" r="4" stroke="black" fill="white" />
+    <rect id="port" class="appendix-port"
+      width="7" height="7" x="0" y="0" />
+  </defs> <!-- END DEFINITIONS -->
+
+
+  <!-- PLAYGROUND -->
+  <!-- END PLAYGROUND -->
+
+
+  <!-- <g id="coordinates">
+    <g id="coordinates-X">
+      <line x1="0" x2="100" y1="-2.5" y2="-2.5" stroke="orange" stroke-width="5"/>
+      <text fill="black" x="7.5" y="-10">0</text>
+      <line x1="50" x2="50" y1="0" y2="700" stroke="#eeeeee" />
+      <line x1="100" x2="200" y1="-2.5" y2="-2.5" stroke="black" stroke-width="5"/>
+      <text fill="black" x="90" y="-10">100</text>
+      <line x1="100" x2="100" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="200" x2="300" y1="-2.5" y2="-2.5" stroke="orange" stroke-width="5"/>
+      <line x1="150" x2="150" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="190" y="-10">200</text>
+      <line x1="200" x2="200" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="300" x2="400" y1="-2.5" y2="-2.5" stroke="black" stroke-width="5"/>
+      <line x1="250" x2="250" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="290" y="-10">300</text>
+      <text fill="black" x="305" y="295">300</text>
+      <line x1="300" x2="300" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="400" x2="500" y1="-2.5" y2="-2.5" stroke="orange" stroke-width="5"/>
+      <line x1="350" x2="350" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="390" y="-10">400</text>
+      <line x1="400" x2="400" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="500" x2="600" y1="-2.5" y2="-2.5" stroke="black" stroke-width="5"/>
+      <line x1="450" x2="450" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="490" y="-10">500</text>
+      <line x1="500" x2="500" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="600" x2="700" y1="-2.5" y2="-2.5" stroke="orange" stroke-width="5"/>
+      <line x1="550" x2="550" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="590" y="-10">600</text>
+      <line x1="600" x2="600" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="700" x2="800" y1="-2.5" y2="-2.5" stroke="black" stroke-width="5"/>
+      <line x1="650" x2="650" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="690" y="-10">700</text>
+      <line x1="700" x2="700" y1="0" y2="700" stroke="#cccccc" />
+      <line x1="800" x2="900" y1="-2.5" y2="-2.5" stroke="orange" stroke-width="5"/>
+      <line x1="750" x2="750" y1="0" y2="700" stroke="#eeeeee" />
+      <text fill="black" x="790" y="-10">800</text>
+      <line x1="850" x2="850" y1="0" y2="700" stroke="#eeeeee" />
+      <line x1="800" x2="800" y1="0" y2="700" stroke="#cccccc" />
+      <text fill="black" x="870" y="-10">900</text>
+      <line x1="900" x2="900" y1="0" y2="700" stroke="#cccccc" />
+    </g>
+    <g id="coordinates-Y">
+      <line x1="-2.5" x2="-2.5" y1="0" y2="100" stroke="black" stroke-width="5"/>
+      <line x1="0" x2="900" y1="50" y2="50" stroke="#eeeeee" />
+      <text fill="black" y="100" x="-35">100</text>
+      <line x1="0" x2="900" y1="100" y2="100" stroke="#cccccc" />
+      <line x1="-2.5" x2="-2.5" y1="100" y2="200" stroke="orange" stroke-width="5"/>
+      <line x1="0" x2="900" y1="150" y2="150" stroke="#eeeeee" />
+      <text fill="black" y="200" x="-35">200</text>
+      <line x1="0" x2="900" y1="200" y2="200" stroke="#cccccc" />
+      <line x1="-2.5" x2="-2.5" y1="200" y2="300" stroke="black" stroke-width="5"/>
+      <line x1="0" x2="900" y1="250" y2="250" stroke="#eeeeee" />
+      <text fill="black" y="300" x="-35">300</text>
+      <line x1="0" x2="900" y1="300" y2="300" stroke="#cccccc" />
+      <line x1="-2.5" x2="-2.5" y1="300" y2="400" stroke="orange" stroke-width="5"/>
+      <line x1="0" x2="900" y1="350" y2="350" stroke="#eeeeee" />
+      <text fill="black" y="400" x="-35">400</text>
+      <line x1="0" x2="900" y1="400" y2="400" stroke="#cccccc" />
+      <line x1="-2.5" x2="-2.5" y1="400" y2="500" stroke="black" stroke-width="5"/>
+      <line x1="0" x2="900" y1="450" y2="450" stroke="#eeeeee" />
+      <text fill="black" y="500" x="-35">500</text>
+      <line x1="0" x2="900" y1="500" y2="500" stroke="#cccccc" />
+      <line x1="-2.5" x2="-2.5" y1="500" y2="600" stroke="orange" stroke-width="5"/>
+      <line x1="0" x2="900" y1="550" y2="550" stroke="#eeeeee" />
+      <text fill="black" y="600" x="-35">600</text>
+      <line x1="0" x2="900" y1="600" y2="600" stroke="#cccccc" />
+      <line x1="-2.5" x2="-2.5" y1="600" y2="700" stroke="black" stroke-width="5"/>
+      <line x1="0" x2="900" y1="650" y2="650" stroke="#eeeeee" />
+      <text fill="black" y="690" x="-35">700</text>
+      <line x1="0" x2="900" y1="700" y2="700" stroke="#cccccc" />
+    </g>
+  </g> -->
+
+
+  <!-- TOPIC CLUSTERS -->
+  <g id="clusters">
+
+    <!-- INSPIRATIONS -->
+    <rect id="inspirations-cluster" class="cluster-rect"
+      width="130" height="176" x="120" y="300" />
+    <text id="inspirations-cluster-label" class="cluster-text"
+      x="253" y="340" transform="rotate(90,253,340)">
+      INSPIRATIONS
+    </text>
+
+    <!-- CREATIVITY AND PATAPHYSICS -->
+    <rect id="creativity-pataphysics-cluster" class="cluster-rect"
+      width="128" height="86" x="340" y="150" />
+    <text id="creativity-pataphysics-cluster-label" class="cluster-text">
+      <tspan id="creativity-pataphysics-cluster-label1"
+        x="340" y="250">CREATIVITY &amp;</tspan>
+      <tspan id="creativity-pataphysics-cluster-label2"
+        x="340" y="265">PATAPHYSICS</tspan>
+    </text>
+
+    <!-- BODEN -->
+    <rect id="boden-cluster" class="cluster-rect"
+      width="90" height="60" x="15" y="200" />
+    <text id="boden-cluster-label" class="cluster-text"
+      x="107" y="202" transform="rotate(90,107,202)">
+      BODEN
+    </text>
+
+    <!-- CREATIVE COMPUTERS -->
+    <rect id="creative-computers-cluster" class="cluster-rect"
+      width="150" height="116" x="290" y="25" />
+    <text id="creative-computers-cluster-label" class="cluster-text"
+      x="450" y="36" transform="rotate(90,450,36)">
+      <tspan id="creative-computers-cluster-label1"
+        x="450" y="30">CREATIVE</tspan>
+      <tspan id="creative-computers-cluster-label2"
+        x="450" y="44">COMPUTERS</tspan>
+    </text>
+
+    <!-- PATALGORITHMS -->
+    <rect id="patalgorithms-cluster" class="cluster-rect"
+      width="121" height="147" x="540" y="280" />
+    <text id="patalgorithms-cluster-label" class="cluster-text"
+      x="665" y="285" transform="rotate(90,665,285)">
+      PATALGORITHMS
+    </text>
+
+    <!-- CREATIVITY AND INTELLIGENCE -->
+    <rect id="creativity-intelligence-cluster" class="cluster-rect"
+      width="168" height="63" x="355" y="330" />
+    <text id="creativity-intelligence-cluster-label" class="cluster-text">
+      <tspan id="creativity-intelligence-cluster-label1"
+        x="360" y="327">CREATIVITY &amp;</tspan>
+      <tspan id="creativity-intelligence-cluster-label2"
+        x="395" y="408">INTELLIGENCE</tspan>
+    </text>
+
+    <!-- EVALUATION FRAMEWORK -->
+    <rect id="evaluation-framework-cluster" class="cluster-rect"
+      width="177" height="75" x="50" y="100" />
+    <text id="evaluation-framework-cluster-label1" class="cluster-text">
+      <tspan id="creative-computers-cluster-label1"
+        x="120" y="96">EVALUATION</tspan>
+      <tspan id="creative-computers-cluster-label2"
+        x="80" y="190">FRAMEWORK</tspan>
+    </text>
+  </g> <!-- END OF TOPIC CLUSTERS -->
+    
+  <!-- APPENDICES -->
+  <g id="appendices">
+
+    <!-- APPENDIX A -->
+    <a href= "https://dr.physics.wtf/html/random.html" xlink:title="Appendix A: Random" class="highlight-river">
+      <path id="appendix-A" class="appendix-river"
+        stroke=#aaaaff
+        d="m 110,525 c -1.02014,-19.80583 -11.45647,-39.06523 -25.15246,-52.79452 -18.5856,-18.2106 -52.84837,-26.24717 -53.19111,-56.95774 -7.82732,-26.11287 4.24334,-52.06321 19.05405,-73.20837 20.49853,-12.48643 39.47647,-27.01791 60.35972,-38.90392 16.02755,-18.15623 29.12483,-38.82766 48.48451,-53.8048 12.18293,-23.05564 36.59452,-29.07263 51.48148,-4.67662 14.03615,20.705 37.54251,40.65164 49.68703,62.54911 10.10155,25.03149 27.35856,46.28247 53.30316,54.6308 23.02232,9.32293 53.34728,-7.27898 68.26697,-24.64528 24.71755,-10.00872 37.14482,-27.60801 40.98446,-55.67786 9.72626,-34.04588 50.36242,-48.69105 57.07473,-84.37136 14.99915,-34.35371 13.85826,-72.70135 8.18722,-108.98737 -3.08732,-25.79249 -0.53702,-51.79819 -1.09461,-77.68012" />
+      <text id="appendix-A-text" class="appendix-text">
+        <textPath id="appendix-A-text-textpath" href="#appendix-A-text-path">Appendix A</textPath>
+        <path id="appendix-A-text-path"
+          fill=none
+          d="M 220,262 L 275,332" />
+      </text>
+    </a>
+    <!-- END APPENDIX A -->
+    
+    <!-- APPENDIX B -->
+    <a href= "https://dr.physics.wtf/html/code.html" xlink:title="Appendix B: Code" class="highlight-river">
+      <path id="appendix-B" class="appendix-river"
+        stroke="#87cdde"
+        d="m 10,308 c 33.88296,2.61942 46.05101,41.45098 72.79046,56.93994 25.12206,9.39352 43.12698,29.20106 60.55814,49.232 32.61612,42.79124 85.8983,58.43067 131.10584,83.53077 25.50164,13.84612 57.09378,33.57217 86.09159,17.55064 33.81877,-6.0085 39.46959,-38.55546 54.24265,-63.5173 11.79261,-25.29598 31.18921,-44.87333 47.54976,-66.99033 27.78922,-50.2725 67.29843,-94.60173 84.23938,-150.48645 9.71871,-24.31821 19.15871,-48.62709 25.52228,-74.09792 10.21403,-31.54067 25.72151,-62.72725 25.08711,-96.53532 10.35465,-20.6526 4.18841,-37.58585 3.15641,-51.21398" />
+      <text id="appendix-B-text" class="appendix-text">
+        <textPath id="appendix-B-text-textpath" href="#appendix-B-text-path">Appendix B</textPath>
+        <path id="appendix-B-text-path"
+          fill="none"
+          d="M 275,502 320,525 350,525" />
+      </text>
+    </a>
+    <!-- END APPENDIX B -->
+    
+    <!-- APPENDIX C -->
+    <a href= "https://dr.physics.wtf/html/wordnet.html" xlink:title="Appendix C: WordNet" class="highlight-lake">
+      <path id="appendix-C" class="appendix-lake"
+        stroke=#80b3ff fill=#80b3ff
+        d="m 360,440 c -7.29368,-2.7059 -15.46571,-3.67315 -23.26026,-2.45927 -12.13682,3.0342 -21.58423,13.21199 -22.22178,24.3819 -0.33344,8.01387 4.92599,15.1514 10.38963,21.16043 4.69624,4.97275 11.53558,7.85297 18.58635,9.22842 6.7603,1.54598 13.9825,2.70184 20.90837,1.42471 6.43474,-1.94707 9.46691,-7.85116 12.54952,-12.71872 2.62592,-5.16539 5.32606,-10.50451 5.41107,-16.26799 0.54946,-6.14866 -0.58174,-12.34675 -1.98405,-18.34737 -1.42314,-3.16294 -4.71077,-6.00994 -8.85925,-5.5502 -3.57718,-0.34188 -7.00054,-1.28016 -10.55794,-1.74385 -0.46657,0.1817 -0.42992,0.75064 -0.96166,0.89194 z" />
+      <text id="appendix-C-text" class="appendix-text"
+        x="313" y="460">Appendix C</text>
+    </a>
+
+    <!-- APPENDIX D -->
+    <a href= "https://dr.physics.wtf/html/git.html" xlink:title="Appendix D: GIT" class="highlight-river">
+      <path id="appendix-D" class="appendix-river"
+        stroke=#afc6e9
+        d="m 714,202 c -29.86064,-1.09361 -61.84949,3.31403 -89.89228,-9.07255 -24.06742,-19.27429 -55.86409,-22.65659 -83.71469,-34.12154 -43.40932,-13.80636 -89.56526,-13.60739 -133.29703,-25.9929 -25.21999,-5.18386 -51.7406,-9.48196 -73.34268,-24.50466 -36.60042,-12.97079 -68.04305,-42.26213 -108.81845,-40.80507 -28.24963,-3.6436 -59.21664,-0.47844 -80.73313,20.1027 -31.39019,19.27281 -55.00775,47.82123 -76.14377,77.44771 -14.96936,19.99373 -35.06303,21.80076 -58.37706,20.59004" />
+      <text id="appendix-D-text" class="appendix-text">
+        <textPath id="appendix-D-text-textpath" href="#appendix-D-text-path">Appendix D</textPath>
+        <path id="appendix-D-text-path"
+          fill=none
+          d="M 240,72 275,83 310,103" />
+      </text>
+    </a>
+
+    <!-- APPENDIX E -->
+    <a href= "https://dr.physics.wtf/html/pubs.html" xlink:title="Appendix E: Publications" class="highlight-lake">
+      <path id="appendix-E" class="appendix-lake"
+        stroke=#87decd fill=#87decd
+        d="m 288,140 c -2.21843,-3.42272 -18.34438,-10.03577 -23.51706,-8.77014 -5.87207,0.67686 -11.65611,-1.31875 -17.54304,-1.31704 -4.68662,-0.2388 -9.14327,-1.94461 -13.81522,-2.05789 -5.1172,0.71659 -7.97979,5.22272 -9.72399,9.03693 -2.82758,7.9927 -0.8811,16.44099 -1.51808,24.63726 -0.28523,3.24661 -0.16839,6.5956 1.23328,9.64082 0.55465,4.47056 2.49288,9.55861 7.74932,11.32706 6.75453,2.92512 14.49726,-0.30351 21.44322,1.83914 5.17494,0.34804 10.84045,0.41249 14.27592,-3.58102 4.96401,-4.16543 10.82264,-7.54542 14.81239,-12.53257 2.72838,-3.42261 5.29516,-7.06486 6.93586,-10.99199 1.70629,-4.47995 2.33141,-9.28212 1.74502,-13.98741 -1.17746,-4.0825 -5.3221,-7.01388 -9.45885,-8.7925 -2.80007,-1.06119 4.75261,2.05204 7.38123,5.54935 z" />
+      <text id="appendix-E-text" class="appendix-text"
+        x="218" y="150">Appendix E</text>
+    </a>
+  </g> <!-- END OF APPENDICES -->
+
+  <!-- CHAPTER LINES -->
+  <g id="lines">
+
+    <!-- INTRODUCTION LINE -->
+    <g id="introduction-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/introduction.html" xlink:title="Chapter 1: Introduction">
+        <polyline id="introduction-line" class="line" 
+          stroke="#54c6e9"
+          points="152 123, 208 123, 208 172, 439 172, 578 312, 720 312" />
+        <text id="introduction-line-name" class="line-name"
+          fill=#54c6e9
+          x=678 y=306>
+          Introduction
+        </text>
+      </a>
+      
+    </g>
+
+    <!-- INSPIRATIONS LINE -->
+    <g id="inspirations-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/inspirations.html" xlink:title="Chapter 2: Inspirations">
+        <polyline id="inspirations-line" class="line" 
+          stroke="#aa87de"
+          points="195 528.5, 195 268, 260 203, 405 203" />
+        <text id="inspirations-line-name" class="line-name"
+          fill=#aa87de
+          x=266 y=214>
+          Inspirations
+        </text>
+      </a>
+    </g>
+
+    <!-- METHODOLOGY LINE -->
+    <g id="methodology-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/methodology.html" xlink:title="Chapter 3: Methodology">
+        <polyline id="methodology-line-main" class="line" 
+          stroke="#0055d4"
+          points="456 6, 376 85.5, 425 133.5, 425 524.5" />
+        <polyline id="methodology-line-branch" class="line" 
+          stroke="#0055d4"
+          points="315 343, 425 343" />
+        <text id="methodology-line-name" class="line-name"
+          fill=#0055d4
+          x=414 y=410 
+          transform="rotate(90 414 410)">
+          Methodology
+        </text>
+      </a>
+    </g>
+
+    <!-- PATAPHYSICS LINE -->
+    <g id="pataphysics-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/pataphysics.html" xlink:title="Chapter 4: Pataphysics">
+        <polyline id="pataphysics-line" class="line" 
+          stroke="#ff80e5"
+          points="185 528, 185 192, 432 192, 630 391, 720 391" />
+        <text id="pataphysics-line-name" class="line-name"
+          fill=#ff80e5
+          x=670 y=385>
+          Pataphysics
+        </text>
+      </a>
+    </g>
+
+    <!-- CREATIVITY LINE -->
+    <g id="creativity-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/creativity.html" xlink:title="Chapter 5: Creativity">
+        <polyline id="creativity-line"
+          stroke="#ffcc00" fill="none" 
+          stroke-width="6" stroke-linecap="square"
+          points="64 62, 338 62, 415 138, 415 352.5, 198 352.5, 64 220, 64 62" /> 
+        <text id="creativity-line-name" class="line-name"
+          fill=#ffcc00
+          x=260 y=347>
+          Creativity
+        </text>
+      </a>
+    </g>
+
+    <!-- TECHNOLOGY LINE -->
+    <g id="technology-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/technology.html" xlink:title="Chapter 6: Technology">
+        <polyline id="technology-line" class="line" 
+          stroke="#ff6600"
+          points="5 372.5, 186 372.5, 286.5 472.5, 501 472.5, 604.5 368.5, 604.5 272, 339.5 7" />
+        <text id="technology-line-name" class="line-name"
+          fill=#ff6600
+          x=500 y=184
+          transform="rotate(45 500 184)">
+          Technology
+        </text>
+      </a>
+    </g>
+
+    <!-- EVALUATION LINE -->
+    <g id="evaluation-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/evaluation.html" xlink:title="Chapter 7: Evaluation">
+        <polyline id="evaluation-line" class="line" 
+          stroke="#216778"
+          points="5 281, 34.5 281, 34.5 52.5, 344 52.5, 369.5 78.5, 443 6" />
+        <text id="evaluation-line-name" class="line-name"
+          fill=#216778
+          x=23 y=160
+          transform="rotate(90 23 160)">
+          Evaluation
+        </text>
+      </a>
+    </g>
+
+    <!-- FOUNDATIONS LINE -->
+    <g id="foundations-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/foundation.html" xlink:title="Chapter 8: Foundations">
+        <polyline id="foundations-line" class="line" 
+          stroke="#aa0088"
+          points="5 492.5, 54.5 492.5, 54.5 42.5, 348.5 42.5, 434.5 128.5, 434.5 275" />
+        <text id="foundations-line-name" class="line-name"
+          fill=#aa0088
+          x=42 y=442
+          transform="rotate(90 42 442)">
+          Foundations
+        </text>
+      </a>
+    </g>
+
+    <!-- INTERPRETATION LINE -->
+    <g id="interpretation-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/interpretation.html" xlink:title="Chapter 9: Interpretation">
+        <polyline id="interpretation-line" class="line" 
+          stroke="#6600ff"
+          points="176.5 114.5, 74.5 216.6, 74.5 442.5, 342.5 442.5, 435 350" />
+        <text id="interpretation-line-name" class="line-name"
+          fill=#6600ff
+          x=280 y=437>
+          Interpretation
+        </text>
+      </a>
+    </g>
+
+    <!-- IMPLEMENTATION LINE -->
+    <g id="implementation-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/implementation.html" xlink:title="Chapter 10: Implementation">
+        <polyline id="implementation-line" class="line" 
+          stroke="#008066"
+          points="174 303, 174 483, 505 483, 614 374, 614 213.5, 720 108" />
+        <text id="implementation-line-name" class="line-name"
+          fill=#008066
+          x=665 y=154
+          transform="rotate(-45 665 154)">
+          Implementation
+        </text>
+      </a>
+    </g>
+
+    <!-- APPLICATIONS LINE -->
+    <g id="applications-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/applications.html" xlink:title="Chapter 11: Applications">
+        <polyline id="applications-line" class="line" 
+          stroke="#292a78"
+          points="86 220, 193 113.5, 220 113.5, 269.5 161.5, 444 161.5, 583.5 301.5, 583.5 374, 720 510" />
+        <text id="applications-line-name" class="line-name"
+          fill=#212178
+          x=686 y=468
+          transform="rotate(45 686 468)">
+          Applications
+        </text>
+      </a>
+    </g>
+
+    <!-- PATANALYSIS LINE -->
+    <g id="patanalysis-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/analysis.html" xlink:title="Chapter 12: Patanalysis">
+        <polyline id="patanalysis-line-main" class="line" 
+          stroke="#ff0053"
+          points="516.5 522, 516.5 362, 593 362, 593 32, 43.5 32, 43.5 362, 516 362" />
+        <text id="patanalysis-line-name" class="line-name"
+          fill=#ff0053 
+          x=530 y=26>
+          Patanalysis
+        </text>
+      </a>
+    </g>
+
+    <!-- ASPIRATIONS LINE -->
+    <g id="aspirations-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/aspirations.html" xlink:title="Chapter 13: Aspirations">
+        <polyline id="aspirations-line-main" class="line" 
+          stroke="#88aa00"
+          points="180 141, 64.5 257, 64.5 492.5, 510.5 492.5, 624.5 378.5, 624.5 216.5, 720 120.5" />
+        <line id="aspirations-line-branch" class="line" 
+          stroke="#88aa00"
+          x1="600" y1="404" x2="710" y2="514" />
+        <text id="aspirations-line-name" class="line-name"
+          fill=#88aa00
+          x=690 y=166
+          transform="rotate(-45 690 166)">
+          Aspirations
+        </text>
+      </a>
+    </g>
+
+    <!-- OUTRODUCTION LINE -->
+    <g id="outroduction-line-group" class="highlight-group">
+      <a href= "https://dr.physics.wtf/html/observations.html" xlink:title="Chapter 14: Outroduction">
+        <polyline id="outroduction-line-main" class="line" 
+          stroke="#0080b3"
+          points="83 5, 83 132, 196 132, 196 182, 436 182, 576 322, 720 322" />
+        <polyline id="outroduction-line-branch-1" class="line" 
+          stroke="#0080b3"
+          points="361.5 85, 361.5 180" />
+        <polyline id="outroduction-line-branch-2" class="line" 
+          stroke="#0080b3"
+          points="413 401.5, 532 282" />
+        <text id="outroduction-line-name" class="line-name"
+          fill=#0080b3
+          x=675 y=333>
+          Outroduction
+        </text>
+      </a>
+    </g>
+  </g> <!-- END CHAPTER LINES -->
+
+  <!-- FOREGROUND LABELS -->
+  <g id="labels">
+
+    <!-- INTRODUCTION LABELS -->
+    <g id="introduction-1-labels-group" class="station-label-group">
+      <text id="station-questions" class="station-label"
+        x="630" y="305">Questions</text>
+      <use href="#exchange-circle" x="645" y="312" />
+      <use href="#exchange-circle" x="624.3" y="312" />
+      <use href="#exchange-circle" x="614" y="312" />
+      <use href="#exchange-circle" x="604.5" y="312" />
+      <use href="#exchange-circle" x="593" y="312" />
+      <text id="station-contributions1" class="station-label"
+        x="510" y="310">
+        <tspan x="510" dy="1em">Contributions</tspan>
+        <tspan x="550" dy="1em">I</tspan>
+      </text>
+      <use href="#exchange-circle" x="570" y="304" />
+      <text id="station-publications" class="station-label"
+        x="548" y="254">Publications</text>
+      <use href="#exchange-circle" x="536.5" y="270" />
+      <use href="#exchange-circle" x="520" y="253" />
+      <text id="station-guide" class="station-label"
+        x="510" y="220">Guide</text>
+      <use id="station-guide-rect" href="#station-rect" 
+        x="500" y="226" fill="#54c6e9" transform="rotate(45, 500 226)" />
+      <use href="#exchange-circle" x="435" y="172" />
+      <use href="#exchange-circle" x="425" y="172" />
+      <use href="#exchange-circle" x="415" y="172" />
+      <use href="#station-motivations" x="0" y="0" />
+      <use href="#exchange-circle" x="335" y="172" />
+      <use href="#port" x="235" y="168" transform="rotate(45,235,168)"/>
+      <text id="station-contributions2" class="station-label"
+        x="160" y="100">Contributions II</text>
+      <use href="#exchange-circle" x="200" y="123" />
+    </g> <!-- END INTRODUCTION LABELS -->
+
+    <!-- INSPIRATIONS LABELS -->
+    <g id="inspirations-2-labels-group" class="station-label-group">
+      <text id="station-motivations" class="station-label"
+        x="320" y="215">Motivation</text>
+      <use href="#exchange-circle" x="335" y="203"/>
+      <use href="#station-oulipo" x="0" y="0"/>
+      <use href="#exchange-circle" x="195" y="310"/>
+      <g id="station-yossarian-group">
+        <text id="station-yossarian" class="station-label"
+          x="205" y="326">Yossarian</text>
+        <use href="#station-rect" x="200" y="324" fill="#aa87de"
+          transform="rotate(90, 200 324)"/>
+      </g>
+      <text id="station-syzygy-surfer" class="station-label"
+        x="206" y="330">
+        <tspan x="206" dy="1em">Syzygy</tspan>
+        <tspan x="206" dy="1em">Surfer</tspan>
+      </text>
+      <use href="#exchange-circle" x="195" y="340" />
+      <use href="#exchange-circle" x="195" y="352" />
+      <use href="#station-coder-culture" x="0" y="0" />
+      <use href="#exchange-circle" x="195" y="362" />
+      <use href="#station-corpora" x="0" y="0" />
+      <text id="station-faustroll" class="station-label"
+        x="132" y="402">Faustroll</text>
+      <use href="#exchange-circle" x="195" y="400" />
+      <text id="station-borges" class="station-label"
+        x="205" y="418">Borges</text>
+      <use href="#exchange-circle" x="195" y="416" />
+      <text id="station-queneau" class="station-label"
+        x="205" y="432">Queneau</text>
+      <use href="#exchange-circle" x="195" y="430" />
+      <text id="station-library-babel" class="station-label"
+        x="205" y="452">
+        <tspan x="205" dy="1em">Library of </tspan>
+        <tspan x="205" dy="1em">Babel</tspan>
+      </text>
+      <use href="#exchange-circle" x="195" y="460" />
+      <use href="#exchange-circle" x="195" y="483" />
+    </g> <!-- END INSPIRATIONS LABELS -->
+
+    <!-- METHODOLOGY LABELS -->
+    <g id="methodology-3-labels-group" class="station-label-group">
+      <use href="#station-tmpr" x="0" y="0"/>
+      <use href="#exchange-circle" x="438" y="24"/>
+      <g id="station-transdisciplinary-group">
+        <text id="station-transdisciplinary" class="station-label"
+          x="405" y="90">Transdisciplinarity</text>
+        <use href="#station-rect" x="393" y="95" fill="#0055d4"
+          transform="rotate(45, 393 95)"/>
+      </g>
+      <use href="#station-disciplines" x="0" y="0"/>
+      <use href="#exchange-circle" x="416" y="125"/>
+      <use href="#station-unite-conquer" x="0" y="0"/>
+      <use href="#exchange-circle" x="425" y="135"/>
+      <g id="station-nicolescu-group">
+        <text id="station-nicolescu" class="station-label"
+          x="370" y="152">Nicolescu</text>
+        <use href="#station-rect" x="422" y="150" fill="#0055d4"
+          transform="rotate(90,422,150)"/>
+      </g>
+      <use href="#exchange-circle" x="425" y="172" />
+      <use href="#exchange-circle" x="425" y="182" />
+      <use href="#station-digital-humanities" x="0" y="0"/>
+      <use href="#exchange-circle" x="425" y="270"/>
+      <text id="station-arts-humanities" class="station-label"
+        x="440" y="280">
+        <tspan x="440" dy="1em">Arts &amp;</tspan>
+        <tspan x="440" dy="1em">Humanities</tspan>
+      </text>
+      <use href="#exchange-circle" x="425" y="286"/>
+      <use href="#port" x="425" y="300" transform="rotate(45,425,300)"/>
+      <g id="station-intradisciplinary-group">
+        <text id="station-intradisciplinary" class="station-label"
+          x="405" y="318" text-anchor="end">
+          Intradisciplinary</text>
+        <use href="#station-rect" x="422" y="316" fill="#0055d4"
+          transform="rotate(90,422,316)"/>
+      </g>
+      <text id="station-subjectivity" class="station-label"
+        x="358" y="335">Subjectivity</text>
+      <use href="#exchange-circle" x="330" y="343"/>
+      <text id="station-objectivity" class="station-label"
+        x="310" y="335">Objectivity</text>
+      <use href="#exchange-circle" x="375" y="343"/>
+      <use href="#exchange-circle" x="425" y="362"/>
+
+      <g id="station-theory-practice-group">
+        <text id="station-theory-practice" class="station-label"
+          x="440" y="420">
+          <tspan x="440" dy="1em">Theory &amp;</tspan>
+          <tspan x="440" dy="1em">Practice</tspan>
+        </text>
+        <use href="#station-rect" x="430" y="425" fill="#0055d4"
+          transform="rotate(90,430,425)"/>
+      </g>
+      <use href="#station-computer-science" x="0" y="0"/>
+      <use href="#exchange-circle" x="425" y="472"/>
+    </g> <!-- END METHODOLOGY LABELS -->
+
+    <!-- PATAPHYSICS LABELS -->
+    <g id="pataphysics-4-labels-group" class="station-label-group">
+      <g id="station-boek-group">
+        <text id="station-boek" class="station-label"
+          x="174" y="513" text-anchor="end">Bök</text>
+        <use href="#station-rect" x="182" y="510" fill="#ff80e5"
+          transform="rotate(90,182,510)"/>
+      </g>
+      <use href="#exchange-circle" x="185" y="493"/>
+      <use href="#exchange-circle" x="185" y="460" />
+      <use href="#station-library-babel" x="0" y="0" />
+      <use href="#exchange-circle" x="185" y="430" />
+      <use href="#station-queneau" x="0" y="0" />
+      <use href="#exchange-circle" x="185" y="416" />
+      <use href="#station-borges" x="0" y="0" />
+      <use href="#exchange-circle" x="185" y="400" />
+      <use href="#station-faustroll" x="0" y="0" />
+      <use href="#exchange-circle" x="185" y="340" />
+      <use href="#station-syzygy-surfer" x="0" y="0" />
+      <text id="station-oulipo" class="station-label"
+        x="130" y="320">Oulipo</text>
+      <use href="#exchange-circle" x="185" y="310"/>
+      <g id="station-hugill-group">
+        <text id="station-hugill" class="station-label"
+          x=153 y=293>Hugill</text>
+        <use href="#station-rect" x="182.5" y="290" fill="#ff80e5"
+          transform="rotate(90,182.5,290)"/>
+      </g>
+      <g id="station-brotchie-group">
+        <text id="station-brotchie" class="station-label"
+          x=204 y=278>Brotchie</text>
+        <use href="#station-rect" x="190" y="274" fill="#ff80e5"
+          transform="rotate(90,190,274)"/>
+      </g>
+      <g id="station-ubu-group">
+        <text id="station-ubu" class="station-label"
+          x=160 y=263>Ubu</text>
+        <use href="#station-rect" x="182.5" y="260" fill="#ff80e5"
+          transform="rotate(90,182.5,260)"/>
+      </g>
+      <use href="#port" x="185" y="225" transform="rotate(45,185,225)"/>
+      <g id="station-grand-gidouille-group">
+        <text id="station-grand-gidouille" class="station-label"
+          x=176 y=195 text-anchor=end>
+          <tspan x=176 dy="1em">Grand</tspan>
+          <tspan x=176 dy="1em">Gidouille</tspan>
+        </text>
+        <use href="#station-rect" x="182.5" y="205" fill="#ff80e5"
+          transform="rotate(90,182.5,205)"/>
+      </g>
+      <g id="station-alfred-jarry-group">
+        <text id="station-alfred-jarry" class="station-label"
+          x="196" y="205">Alfred Jarry</text>
+        <use href="#station-rect" x="210" y="194.5" fill="#ff80e5"/>
+      </g>
+      <use href="#exchange-circle" x="295" y="192" />
+      <use href="#exchange-circle" x="415" y="192" />
+      <use href="#station-speculative-computing" x="0" y="0" />  
+      <use href="#exchange-circle" x="434" y="192" />
+      <use href="#station-pataphysics-creativity" x="0" y="0" />
+      <use href="#exchange-circle" x="506" y="266" />
+      <g id="station-clinamen-group">
+        <text id="station-clinamen" class="station-label"
+          x=525 y=340>Clinamen</text>
+        <use href="#station-rect" x="570.5" y="335" fill="#ff80e5"
+          transform="rotate(45,570.5,335)"/>
+      </g>
+      <use href="#exchange-circle" x="583" y="343" />
+      <use href="#exchange-circle" x="613.5" y="373.5" />
+      <use href="#station-pataphysicalisation" x="0" y="0" />
+      <g id="station-syzygy-group">
+        <text id="station-syzygy" class="station-label"
+          x="634" y="380">Syzygy</text>
+        <use href="#station-rect" x="628" y="382" fill="#ff80e5"
+          transform="rotate(45,628,382)"/>
+      </g>
+      <g id="station-antinomy-group">
+        <text id="station-antinomy" class="station-label"
+          x="640" y="405">Antinomy</text>
+        <use href="#station-rect" x="650" y="393.7" fill="#ff80e5"/>
+      </g>
+    </g> <!-- END PATAPHYSICS LABELS -->
+
+    <!-- CREATIVITY LABELS -->
+    <g id="creativity-5-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="64" y="70" />
+      <use href="#station-x2models" x="0" y="0" />
+      <g id="station-x3models-group">
+        <text id="station-x3models" class="station-label"
+          x="110" y="76">3 X Models</text>
+        <use href="#station-rect" x="120" y="64.6" fill="#ffcc00"/>
+      </g>
+      <use href="#exchange-circle" x="200" y="62" />
+      <use href="#station-processes" x="0" y="0" />
+      <use href="#exchange-circle" x="300" y="62" />
+      <use href="#station-computers" x="0" y="0" />
+      <use href="#exchange-circle" x="350" y="75" />
+      <use href="#station-creative-computing" x="0" y="0" />
+      <use href="#exchange-circle" x="362" y="85" />
+      <use href="#station-computational-creativity" x="0" y="0" />
+      <use href="#exchange-circle" x="375" y="98" />
+      <use href="#station-searching-browsing" x="0" y="0" />
+      <use href="#exchange-circle" x="408" y="132" />
+      <use href="#station-disciplines" x="0" y="0" />
+      <use href="#exchange-circle" x="415" y="172" />
+      <use href="#exchange-circle" x="415" y="182" />
+      <use href="#exchange-circle" x="415" y="192" />
+      <use href="#exchange-circle" x="415" y="210" />
+      <use href="#station-pataphysics-creativity" x="0" y="0" />
+      <use href="#exchange-circle" x="415" y="270" />
+      <text id="station-speculative-computing" class="station-label"
+        x=365 y=210>
+        <tspan x=365 dy="1em">Speculative</tspan>
+        <tspan x=365 dy="1em">Computing</tspan>
+      </text>
+      <use href="#station-digital-humanities" x="0" y="0" />
+      <use href="#exchange-circle" x="415" y="286" />
+      <use href="#station-arts-humanities" x="0" y="0" />
+      <use href="#exchange-circle" x="375" y="353" />
+      <use href="#station-subjectivity" x="0" y="0" />
+      <use href="#exchange-circle" x="330" y="353" />
+      <use href="#station-objectivity" x="0" y="0" />
+      <use href="#exchange-circle" x="195" y="352" />
+      <use href="#station-coder-culture" x="0" y="0" />
+      <use href="#exchange-circle" x="185" y="340" />
+      <use href="#station-syzygy-surfer" x="0" y="0" />
+      <use href="#exchange-circle" x="164" y="319" />
+      <use href="#station-oulipo" x="0" y="0" />
+      <use href="#exchange-circle" x="74.5" y="230" />
+      <use href="#exchange-circle" x="64" y="204" />
+      <use href="#station-boden" x="0" y="0" />
+      <g id="station-x4models-group">
+        <text id="station-x4models" class="station-label"
+          x="29" y="130" text-anchor=end>
+          <tspan x="29" y="130">4 X</tspan>
+          <tspan x="29" y="136">Models</tspan>
+        </text>
+        <use href="#station-rect" x="61" y="132" fill="#ffcc00"
+          transform="rotate(90,61,132)"/>
+      </g>
+      <use href="#exchange-circle" x="64" y="100" />
+      <use href="#station-models" x="0" y="0" />
+    </g> <!-- END CREATIVITY LABELS -->
+
+    <!-- TECHNOLOGY LABELS -->
+    <g id="technology-6-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="390" y="58" />
+      <use href="#station-ranking" x="0" y="0" />
+      <use href="#exchange-circle" x="402.5" y="70" />
+      <use href="#station-searching-browsing" x="0" y="0" />
+      <use href="#exchange-circle" x="446" y="113" />
+      <text id="station-unite-conquer" class="station-label"
+        x="460" y="105">
+        <tspan x="460" dy="1em">Unite &amp; Conquer</tspan>
+        <tspan x="460" dy="1em">(Yang)</tspan>
+      </text>
+      <g id="station-information-retrieval-group">
+        <text id="station-information-retrieval" class="station-label"
+          x=490 y=130>
+          <tspan x=490 dy="1em">Information</tspan>
+          <tspan x=490 dy="1em">Retrieval</tspan>
+        </text>
+        <use id="station-information-retrieval-rect" href="#station-rect" 
+          x="488" y="148.3" fill="#ff6600" transform="rotate(45,488,148.3)" />
+      </g>
+      <g id="station-formal-models-group">
+        <text id="station-formal-models" class="station-label"
+          x="520" y="150">
+          <tspan x="520" dy="1em">Formal</tspan>
+          <tspan x="520" dy="1em">Models</tspan>
+        </text>
+        <use id="station-formal-models-rect" href="#station-rect" 
+          x="510" y="170" fill="#ff6600" transform="rotate(45,510,170)" />
+      </g>
+      <g id="station-tfidf-group">
+        <text id="station-tfidf" class="station-label"
+          x="540" y="190">TF-IDF</text>
+        <use id="station-tfidf-rect" href="#station-rect" 
+          x="530" y="190" fill="#ff6600" transform="rotate(45,530,190)" />
+      </g>
+      <use href="#exchange-circle" x="567" y="235" />
+      <use href="#station-damerau-levenshtein" x="0" y="0" />
+      <use href="#exchange-circle" x="592.5" y="260" />
+      <use href="#station-nlp" x="0" y="0" />
+      <use href="#exchange-circle" x="604.5" y="285" />
+      <use href="#station-design" x="0" y="0" />
+      <use href="#exchange-circle" x="580" y="393" />
+      <use href="#station-wordnet" x="0" y="0" />
+      <g id="station-tdm-group">
+        <text id="station-tdm" class="station-label"
+          x="525" y="415">TDM</text>
+        <use id="station-tdm-rect" href="#station-rect" 
+          x="545" y="421" fill="#ff6600" transform="rotate(-45,545,421)" />
+      </g>
+      <use href="#exchange-circle" x="525" y="448.5" />
+      <use href="#station-index" x="0" y="0" />
+      <use href="#exchange-circle" x="425" y="472" />
+      <text id="station-computer-science" class="station-label"
+        x="440" y="450">
+        <tspan x="440" dy="1em">Computer</tspan>
+        <tspan x="440" dy="1em">Science</tspan>
+      </text>
+      <g id="station-linguistics-group">
+        <text id="station-linguistics" class="station-label"
+          x=360 y=465>Linguistics</text>
+        <use id="station-linguistics-rect" href="#station-rect" 
+          x="375" y="467.5" fill="#ff6600" />
+      </g>
+      <use href="#port" x="350" y="468" transform="rotate(45,350,468)" />
+      <use href="#exchange-circle" x="325" y="472" />
+      <text id="station-maxent-obscurity" class="station-label">
+        <tspan x=310 y=507>Max Entropy &amp;</tspan>
+        <tspan x=310 y=514>Obscurity</tspan>
+      </text>
+      <g id="station-regex-group">
+        <text id="station-regex" class="station-label"
+          x="286" y="460">Regex</text>
+        <use id="station-regex-rect" href="#station-rect" 
+          x="278" y="457" fill="#ff6600" transform="rotate(45,278,457)"/>
+      </g>
+      <use href="#exchange-circle" x="174" y="372.5" />
+      <text id="station-coder-culture" class="station-label"
+        x="165" y="340" text-anchor="end">
+        <tspan x="165" dy="1em">Coder</tspan>
+        <tspan x="165" dy="1em">Culture</tspan>
+      </text>
+      <use href="#port" x="100" y="368" transform="rotate(45,100,368)" />
+      <g id="station-ngrams-group">
+        <text id="station-ngrams" class="station-label"
+          x="83" y="388">N-Grams</text>
+        <use id="station-ngrams-rect" href="#station-rect" 
+          x="88" y="375.4" fill="#ff6600" />
+      </g>
+      <g id="station-pos-group">
+        <text id="station-pos" class="station-label"
+          x="20" y="388">POS</text>
+        <use id="station-pos-rect" href="#station-rect" 
+          x="25" y="375.4" fill="#ff6600" />
+      </g>
+    </g> <!-- END TECHNOLOGY LABELS -->
+
+    <!-- EVALUATION LABELS -->
+    <g id="evaluation-7-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="34" y="280" />
+      <text id="station-SPECS" class="station-label"
+        x="10" y="295">SPECS</text>
+      <use href="#exchange-circle" x="34" y="250" />
+      <text id="station-CSF" class="station-label"
+        x="10" y="252">CSF</text>
+      <use href="#exchange-circle" x="34" y="216" />
+      <text id="station-criteria" class="station-label"
+        x="1" y="218">Criteria</text>
+      <use href="#exchange-circle" x="34" y="70" />
+      <text id="station-x2models" class="station-label"
+        x="27" y="60" text-anchor=end>
+        <tspan x="27" y="60">2 X</tspan>
+        <tspan x="27" y="65">Models</tspan>
+      </text>
+      <use href="#exchange-circle" x="83" y="52.5" />
+      <use href="#station-output-input" x="0" y="0" />
+      <g id="station-MMCE-group">
+        <text id="station-MMCE" class="station-label"
+          x="140" y="25">MMCE</text>
+        <use id="station-MMCE-rect" href="#station-rect" 
+          x="150" y="47.5" fill="#216778" />
+      </g>
+      <use href="#exchange-circle" x="200" y="52.5" />
+      <text id="station-processes" class="station-label"
+        x="185" y="75">Processes</text>
+      <g id="station-creative-tripod-group">
+        <text id="station-creative-tripod" class="station-label"
+          x="220" y="10">
+          <tspan x="220" dy="1em">Creative</tspan>
+          <tspan x="220" dy="1em">Tripod</tspan>
+        </text>
+        <use id="station-creative-tripod-rect" href="#station-rect" 
+          x="230" y="47.5" fill="#216778" />
+      </g>
+      <g id="station-relevance-group">
+        <text id="station-relevance" class="station-label"
+          x="240" y="75">Relevance</text>
+        <use id="station-relevance-rect" href="#station-rect" 
+          x="250" y="55.5" fill="#216778" />
+      </g>
+      <use href="#exchange-circle" x="300" y="52.5" />
+      <text id="station-computers" class="station-label"
+        x="296" y="25">Computers</text>
+      <use href="#exchange-circle" x="359" y="67.5" />
+      <text id="station-creative-computing" class="station-label"
+        x=340 y=70 text-anchor=end>
+        <tspan x=340 dy="1em">Creative</tspan>
+        <tspan x=340 dy="1em">Computing</tspan>
+      </text>
+      <use href="#exchange-circle" x="369" y="78" />
+      <use href="#exchange-circle" x="377" y="71" />
+      <text id="station-computational-creativity" class="station-label"
+        x="350" y="93" text-anchor=end>
+        <tspan x="350" dy="1em">Computational</tspan>
+        <tspan x="350" dy="1em">Creativity</tspan>
+      </text>
+      <use href="#exchange-circle" x="390" y="58" />
+      <text id="station-ranking" class="station-label"
+        x=362 y=46>Ranking</text>
+      <use href="#exchange-circle" x="402.5" y="46" />
+      <text id="station-searching-browsing" class="station-label"
+        x="415" y="60">
+        <tspan x="415" dy="1em">Searching &amp;</tspan>
+        <tspan x="415" dy="1em">Browsing</tspan>
+      </text>
+      <g id="station-precision-recall-group">
+        <text id="station-precision-recall" class="station-label"
+          x="415" y="15" text-anchor=end>
+          <tspan x="415" y="15">Precision</tspan>
+          <tspan x="415" y="22">&amp; Recall</tspan>
+        </text>
+        <use id="station-precision-recall-rect" href="#station-rect" 
+          x="420" y="22" fill="#216778" transform="rotate(-45,420,22)" />
+      </g>
+      <use href="#exchange-circle" x="431" y="18" />
+      <text id="station-tmpr" class="station-label"
+        x="450" y="25">TMPR</text>
+    </g> <!-- END EVALUATION LABELS -->
+
+    <!-- FOUNDATIONS LABELS -->
+    <g id="foundations-8-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="54.5" y="362" />
+      <use href="#station-mimicry" x="0" y="0" />
+      <use href="#exchange-circle" x="54.5" y="250" />
+      <use href="#station-CSF" x="0" y="0" />
+      <use href="#exchange-circle" x="54.5" y="170" />
+      <text id="station-p5model" class="station-label"
+        x="75" y="160">5 P Model</text>
+      <use href="#exchange-circle" x="54.5" y="100" />
+      <use href="#station-models" x="0" y="0" />
+      <use href="#exchange-circle" x="83" y="42.5" />
+      <use href="#station-output-input" x="0" y="0" />
+      <use href="#exchange-circle" x="200" y="42.5" />
+      <use href="#station-processes" x="0" y="0" />
+      <g id="station-patadata-group">
+        <text id="station-patadata" class="station-label"
+          x="257" y="25">Patadata</text>
+        <use id="station-patadata-rect" href="#station-rect" 
+          x="265" y="37.5" fill="#aa0088" />
+      </g>
+      <use href="#exchange-circle" x="366.5" y="61" />
+      <use href="#station-creative-computing" x="0" y="0" />
+      <use href="#exchange-circle" x="377" y="71" />
+      <use href="#station-computational-creativity" x="0" y="0" />
+      <use href="#exchange-circle" x="424" y="117" />
+      <text id="station-disciplines" class="station-label"
+        x="355" y="140">Disciplines</text>
+      <use href="#exchange-circle" x="435" y="162" />
+      <use href="#exchange-circle" x="435" y="172" />
+      <use href="#exchange-circle" x="434" y="192" />
+      <text id="station-pataphysics-creativity" class="station-label"
+        x="446" y="180">
+        <tspan x="446" dy="1em">Pataphysics &amp;</tspan>
+        <tspan x="446" dy="1em">Creativity</tspan>
+      </text> 
+      <g id="station-abstract-concrete-group">
+        <text id="station-abstract-concrete" class="station-label">
+          <tspan x="443" y="240">Abstract</tspan>
+          <tspan x="443" y="246">&amp; Concrete</tspan>
+        </text>
+        <use id="station-abstract-concrete-rect" href="#station-rect" 
+          x="439.5" y="242" fill="#aa0088" transform="rotate(90,439.5,242)" />
+      </g>
+      <use href="#exchange-circle" x="435" y="270" />
+      <text id="station-digital-humanities" class="station-label"
+        x="405" y="260" text-anchor=end>
+        <tspan x="405" dy="1em">Digital</tspan>
+        <tspan x="405" dy="1em">Humanities</tspan>
+      </text>
+    </g> <!-- END FOUNDATIONS LABELS -->
+
+    <!-- INTERPRETATION LABELS -->
+    <g id="interpretation-9-labels-group" class="station-label-group">
+      <g id="station-brain-cpu-group">
+        <text id="station-brain-cpu" class="station-label">
+          <tspan x="434" y="335">Brain vs.</tspan>
+          <tspan x="434" y="341">CPU</tspan>
+        </text>
+        <use id="station-brain-cpu-rect" href="#station-rect" 
+          x="434" y="345" fill="#6600ff" />
+      </g>
+      <use href="#exchange-circle" x="425" y="362" />
+      <use href="#exchange-circle" x="400" y="385" />
+      <text id="station-programmer" class="station-label"
+        x="348" y="385">Programmer</text>
+      <g id="station-ai-agi-group">
+        <text id="station-ai-agi" class="station-label"
+          x="335" y="406">AI &amp; AGI</text>
+        <use id="station-ai-agi-rect" href="#station-rect" 
+          x="364.5" y="413.5" fill="#6600ff" transform="rotate(-45,364.5,413.5)" />
+      </g>
+      <g id="station-cohen-group">
+        <text id="station-cohen" class="station-label"
+          x="120" y="435">Cohen</text>
+        <use id="station-cohen-rect" href="#station-rect" 
+          x="130" y="437.5" fill="#6600ff" />
+      </g>
+      <g id="station-infantalisation-group">
+        <text id="station-infantalisation" class="station-label"
+          x="80" y="458">Infantalisation </text>
+        <use id="station-infantalisation-rect" href="#station-rect" 
+          x="100" y="445.3" fill="#6600ff" />
+      </g>
+      <use href="#exchange-circle" x="74.5" y="362" />
+      <use href="#station-mimicry" x="0" y="0" />
+      <g id="station-zombies-group">
+        <text id="station-zombies" class="station-label"
+          x="85" y="325">Zombies</text>
+        <use id="station-zombies-rect" href="#station-rect" 
+          x="79.5" y="323" fill="#6600ff" transform="rotate(90,79.5,323)"/>
+      </g>
+      <use href="#exchange-circle" x="74.5" y="280" />
+      <text id="station-un-definitions" class="station-label">
+        <tspan x="85" y="282">(Un-)</tspan>
+        <tspan x="85" y="289">Definitions</tspan>
+      </text>
+      <use href="#exchange-circle" x="74.5" y="265" />
+      <use href="#station-anthropomorphism" x="0" y="0" />
+      <use href="#exchange-circle" x="74.5" y="250" />
+      <use href="#station-CSF" x="0" y="0" />
+      <use href="#exchange-circle" x="74.5" y="230" />
+      <use href="#exchange-circle" x="74.5" y="216" />
+      <use href="#station-criteria" x="0" y="0" />
+      <use href="#exchange-circle" x="87" y="204" />
+      <text id="station-boden" class="station-label"
+        x=70 y=190>Boden</text>
+      <use href="#exchange-circle" x="120.7" y="170" />
+      <use href="#station-p5model" x="0" y="0" />
+      <use href="#exchange-circle" x="150" y="141" />
+      <text id="station-framework" class="station-label"
+        x="102" y="125">Framework</text>
+      <use href="#exchange-circle" x="176" y="114" />
+      <use href="#station-contributions2" x="0" y="0" />
+    </g> <!-- END INTERPRETATION LABELS -->
+
+    <!-- IMPLEMENTATION LABELS -->
+    <g id="implementation-10-labels-group" class="station-label-group">
+      <g id="station-python-group">
+        <text id="station-python" class="station-label"
+          x="630" y="157">Python</text>
+        <use id="station-python-rect" href="#station-rect" 
+          x="660" y="161" fill="#008066" transform="rotate(-45,660,161)" />
+      </g>
+      <g id="station-setup-group">
+        <text id="station-setup" class="station-label"
+          x="620" y="170">Setup</text>
+        <use id="station-setup-rect" href="#station-rect" 
+          x="650" y="171" fill="#008066" transform="rotate(-45,650,171)" />
+      </g>
+      <use href="#port" x="628" y="192" />
+      <g id="station-html-group">
+        <text id="station-html" class="station-label"
+          x="630" y="245">HTML</text>
+        <use id="station-html-rect" href="#station-rect" 
+          x="619" y="242" fill="#008066" transform="rotate(90,619,242)" />
+      </g>
+      <use href="#exchange-circle" x="614" y="285" />
+      <use href="#station-design" x="0" y="0" />
+      <use href="#exchange-circle" x="614" y="312" />
+      <use href="#exchange-circle" x="614" y="322" />
+      <use href="#exchange-circle" x="614" y="340" />
+      <use href="#station-numbers" x="0" y="0" />
+      <use href="#exchange-circle" x="613.5" y="373.5" />
+      <use href="#station-syzygy" x="0" y="0" />
+      <use href="#exchange-circle" x="600" y="389" />
+      <g id="station-prototypes-group">
+        <text id="station-prototypes" class="station-label"
+          x="525" y="401">Prototypes</text>
+        <use id="station-prototypes-rect" href="#station-rect" 
+          x="565" y="416" fill="#008066" transform="rotate(-45,565,416)" />
+      </g>
+      <g id="station-gutenberg-group">
+        <text id="station-gutenberg" class="station-label"
+          x="550" y="465">Gutenberg</text>
+        <use id="station-gutenberg-rect" href="#station-rect" 
+          x="542" y="450" fill="#008066" transform="rotate(-45,542,450)" />
+      </g>
+      <use href="#exchange-circle" x="532" y="456" />
+      <use href="#station-index" x="0" y="0" />
+      <use href="#exchange-circle" x="470" y="483" />
+      <text id="station-video" class="station-label"
+        x="465" y="505">Video</text>
+      <g id="station-css-group">
+        <text id="station-css" class="station-label"
+          x="402" y="505">CSS</text>
+        <use id="station-css-rect" href="#station-rect" 
+          x="410" y="485.5" fill="#008066" />
+      </g>
+      <use href="#port" x="400" y="478" transform="rotate(45,400,478)" />
+      <use href="#exchange-circle" x="260" y="483" />
+      <text id="station-image" class="station-label"
+        x="250" y="505">Image</text>
+      <g id="station-shakespeare-group">
+        <text id="station-shakespeare" class="station-label"
+          x="217" y="474">Shakespeare</text>
+        <use id="station-shakespeare-rect" href="#station-rect" 
+          x="225" y="477.9" fill="#008066" />
+      </g>
+      <use href="#exchange-circle" x="195" y="483" />
+      <g id="station-javascript-group">
+        <text id="station-javascript" class="station-label"
+          x="125" y="484">JavaScript</text>
+        <use id="station-javascript-rect" href="#station-rect" 
+          x="171.5" y="483" fill="#008066" transform="rotate(90,171.5,483)" />
+      </g>
+      <use href="#exchange-circle" x="174" y="460" />
+      <use href="#station-library-babel" x="0" y="0" />
+      <use href="#exchange-circle" x="174" y="430" />
+      <use href="#station-queneau" x="0" y="0" />
+      <text id="station-poetry" class="station-label"
+        x="145" y="429">Poetry</text>
+      <use href="#exchange-circle" x="174" y="416" />
+      <use href="#station-borges" x="0" y="0" />
+      <use href="#exchange-circle" x="174" y="400" />
+      <use href="#station-faustroll" x="0" y="0" />
+      <use href="#exchange-circle" x="174" y="385" />
+      <use href="#station-corpora" x="0" y="0" />
+      <use href="#exchange-circle" x="174" y="372.5" />
+      <use href="#exchange-circle" x="174" y="352" />
+      <use href="#station-coder-culture" x="0" y="0" />
+      <use href="#exchange-circle" x="174" y="340" />
+      <use href="#station-syzygy-surfer" x="0" y="0" />
+      <use href="#exchange-circle" x="174" y="310" />
+      <use href="#station-oulipo" x="0" y="0" />
+    </g> <!-- END IMPLEMENTATION LABELS -->
+
+    <!-- APPLICATIONS LABELS -->
+    <g id="applications-11-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="675" y="465" />
+      <text id="station-digital-opera" class="station-label">
+        <tspan x="635" y="478">Digital</tspan>
+        <tspan x="635" y="485">Opera</tspan>
+      </text>
+      <use href="#exchange-circle" x="650" y="440" />
+      <text id="station-patadata-ontology" class="station-label">
+        <tspan x="655" y="430">Patadata</tspan>
+        <tspan x="655" y="436">Ontology</tspan>
+      </text>
+      <use href="#exchange-circle" x="625" y="415" />
+      <text id="station-dennis-algorithms" class="station-label">
+        <tspan x="588" y="430">Dennis'</tspan>
+        <tspan x="584" y="436">Algorithms</tspan>
+      </text>
+      <use href="#exchange-circle" x="607" y="397" />
+      <use href="#exchange-circle" x="600" y="389" />
+      <use href="#exchange-circle" x="583" y="362" />
+      <use href="#station-pataphysicalisation" x="0" y="0" />
+      <use href="#exchange-circle" x="583" y="343" />
+      <use href="#exchange-circle" x="545" y="263" />
+      <use href="#station-publications" x="0" y="0" />
+      <use href="#exchange-circle" x="435" y="162" />
+      <g id="station-patakosmos-group">
+        <text id="station-patakosmos" class="station-label"
+          x="295" y="152">Patakosmos</text>
+        <use id="station-patakosmos-rect" href="#station-rect" 
+          x="310" y="156.5" fill="#212178" />
+      </g>
+      <use href="#port" x="235" y="128" />
+      <g id="station-impact-group">
+        <text id="station-impact" class="station-label"
+          x="235" y="115">Impact</text>
+        <use id="station-impact-rect" href="#station-rect" 
+          x="227" y="114" fill="#212178" transform="rotate(45,227,114)" />
+      </g>
+      <use href="#exchange-circle" x="200" y="113" />
+      <use href="#station-contributions2" x="0" y="0" />
+      <use href="#exchange-circle" x="158" y="148" />
+      <use href="#station-framework" x="0" y="0" />
+    </g> <!-- END APPLICATIONS LABELS -->
+
+    <!-- PATANALYSIS LABELS -->
+    <g id="patanalysis-12-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="516.5" y="486" />
+      <use href="#exchange-circle" x="516.5" y="440" />
+      <text id="station-index" class="station-label"
+        x="485" y="442">Index</text>
+      <g id="station-returnall-firstonly-group">
+        <text id="station-returnall-firstonly" class="station-label"
+          text-anchor=end>
+          <tspan x="510" y="414">Return all</tspan>
+          <tspan x="510" y="420">vs. First only</tspan>
+        </text>
+        <use id="station-returnall-firstonly-rect" href="#station-rect" 
+          x="514" y="417" fill="#ff0053" transform="rotate(90,514,417)" />
+      </g>
+      <g id="station-hbp-group">
+        <text id="station-hbp" class="station-label"
+          x="494" y="400">HBP</text>
+        <use id="station-hbp-rect" href="#station-rect" 
+          x="514" y="398" fill="#ff0053" transform="rotate(90,514,398)" />
+      </g>
+      <g id="station-turing-group">
+        <text id="station-turing" class="station-label"
+          x="486" y="375">Turing</text>
+        <use id="station-turing-rect" href="#station-rect" 
+          x="500" y="364.5" fill="#ff0053" />
+      </g>
+      <g id="station-free-will-group">
+        <text id="station-free-will" class="station-label">
+          <tspan x="480" y="347">Free</tspan>
+          <tspan x="480" y="353">Will</tspan>
+        </text>
+        <use id="station-free-will-rect" href="#station-rect" 
+          x="475" y="357" fill="#ff0053" />
+      </g>
+      <use href="#exchange-circle" x="451" y="362.5" />
+      <text id="station-creativity-intelligence" class="station-label">
+        <tspan x="445" y="380">Creativity &amp;</tspan>
+        <tspan x="445" y="386">Intelligence</tspan>
+      </text>
+      <use href="#exchange-circle" x="425" y="362" />
+      <g id="station-understanding-group">
+        <text id="station-understanding" class="station-label"
+          x="346" y="375">Understanding</text>
+        <use id="station-understanding-rect" href="#station-rect" 
+          x="375" y="364.5" fill="#ff0053" />
+      </g>
+      <use href="#port" x="315" y="357" transform="rotate(45,315,357)" />
+      <g id="station-base-text-group">
+        <text id="station-base-text" class="station-label">
+          <tspan x="298" y="375">Base</tspan>
+          <tspan x="298" y="381">Text</tspan>
+        </text>
+        <use id="station-base-text-rect" href="#station-rect" 
+          x="300" y="365" fill="#ff0053" />
+      </g>
+      <g id="station-influences-group">
+        <text id="station-influences" class="station-label"
+          x="250" y="375">Influences</text>
+        <use id="station-influences-rect" href="#station-rect" 
+          x="260" y="365" fill="#ff0053" />
+      </g>
+      <use href="#exchange-circle" x="195" y="362" />
+      <text id="station-corpora" class="station-label"
+        x="205" y="375">Corpora</text>
+      <use href="#exchange-circle" x="74.5" y="362" />
+      <text id="station-mimicry" class="station-label"
+        x="84" y="355">Mimicry</text>
+      <use href="#exchange-circle" x="54.5" y="362" />
+      <g id="station-bias-group">
+        <text id="station-bias" class="station-label"
+          x="15" y="353">Bias</text>
+        <use id="station-bias-rect" href="#station-rect" 
+          x="40.5" y="350" fill="#ff0053" transform="rotate(90,40.5,350)" />
+      </g>
+      <use href="#exchange-circle" x="43.4" y="325" />
+      <text id="station-uncreativity" class="station-label" text-anchor=end>
+        <tspan x="35" y="324">Un-</tspan>
+        <tspan x="35" y="330">creativty</tspan>
+      </text>
+      <use href="#exchange-circle" x="43.4" y="250" />
+      <use href="#station-CSF" x="0" y="0" />
+      <use href="#port" x="43" y="180" transform="rotate(45,43,180)"/>
+      <use href="#exchange-circle" x="43.4" y="100" />
+      <text id="station-models" class="station-label"
+        x="4" y="102">Models</text>
+      <use href="#exchange-circle" x="200" y="32" />
+      <use href="#station-processes" x="0" y="0" />
+      <use href="#exchange-circle" x="300" y="32" />
+      <use href="#station-computers" x="0" y="0" />
+      <use href="#port" x="593" y="97" transform="rotate(45,593,97)"/>
+      <g id="station-errors-group">
+        <text id="station-errors" class="station-label"
+          x="560" y="135">Errors</text>
+        <use id="station-errors-rect" href="#station-rect" 
+          x="590" y="134" fill="#ff0053" transform="rotate(90,590,134)" />
+      </g>
+      <use href="#exchange-circle" x="592.5" y="210" />
+      <text id="station-damerau-levenshtein" class="station-label">
+        <tspan x="550" y="205">Damerau</tspan>
+        <tspan x="541" y="212">Levenshtein</tspan>
+      </text>
+      <use href="#exchange-circle" x="592.5" y="225" />
+      <text id="station-apis" class="station-label"
+        x="630" y="228">APIs</text>
+      <use href="#exchange-circle" x="592.5" y="260" />
+      <text id="station-nlp" class="station-label"
+        x="630" y="262">NLP</text>
+      <use href="#exchange-circle" x="592.5" y="285" />
+      <text id="station-design" class="station-label"
+        x="630" y="288">Design</text>
+      <use href="#exchange-circle" x="593" y="312" />
+      <use href="#exchange-circle" x="593" y="322" />
+      <use href="#exchange-circle" x="593" y="340" />
+      <text id="station-numbers" class="station-label"
+        x="630" y="343">Numbers</text>
+      <use href="#exchange-circle" x="593" y="362" />
+      <use href="#exchange-circle" x="583" y="362" />
+      <text id="station-pataphysicalisation" class="station-label"
+        x="500" y="354">Pataphysicalisation</text>
+      <use href="#exchange-circle" x="550" y="362" />
+      <text id="station-wordnet" class="station-label"
+        x="525" y="380">WordNet</text>
+    </g> <!-- END PATANALYSIS LABELS -->
+
+    <!-- ASPIRATIONS LABELS -->
+    <g id="aspirations-13-labels-group" class="station-label-group">
+      <g id="station-performance-group">
+        <text id="station-performance" class="station-label"
+          x="670" y="185">Performance</text>
+        <use id="station-performance-rect" href="#station-rect" 
+          x="664" y="184" fill="#88aa00" transform="rotate(135,664,184)" />
+      </g>
+      <use href="#exchange-circle" x="624.3" y="225" />
+      <use href="#station-apis" x="0" y="0" />
+      <use href="#exchange-circle" x="624.3" y="260" />
+      <use href="#station-nlp" x="0" y="0" />
+      <use href="#exchange-circle" x="624.3" y="285" />
+      <use href="#station-design" x="0" y="0" />
+      <use href="#exchange-circle" x="624.3" y="312" />
+      <use href="#exchange-circle" x="624.3" y="362" />
+      <use href="#station-pataphysicalisation" x="0" y="0" />
+      <use href="#exchange-circle" x="607" y="397" />
+      <use href="#exchange-circle" x="595" y="408" />
+      <use href="#station-wordnet" x="0" y="0" />
+      <use href="#exchange-circle" x="617" y="422" />
+      <use href="#station-dennis-algorithms" x="0" y="0" />
+      <use href="#exchange-circle" x="643" y="447" />
+      <use href="#station-patadata-ontology" x="0" y="0" />
+      <use href="#exchange-circle" x="667.5" y="472.5" />
+      <use href="#station-digital-opera" x="0" y="0" />
+      <g id="station-extensions-group">
+        <text id="station-extensions" class="station-label"
+          x="570" y="450">Extensions</text>
+        <use id="station-extensions-rect" href="#station-rect" 
+          x="570.5" y="439.5" fill="#88aa00" transform="rotate(135,570.5,439.5)" />
+      </g>
+      <use href="#exchange-circle" x="539.5" y="463.5" />
+      <use href="#station-index" x="0" y="0" />
+      <use href="#exchange-circle" x="516.5" y="486" />
+      <use href="#exchange-circle" x="470" y="493" />
+      <use href="#station-video" x="0" y="0" />
+      <use href="#port" x="393" y="488" transform="rotate(45,393,488)" />
+      <use href="#exchange-circle" x="325" y="492.5" />
+      <use href="#station-maxent-obscurity" x="0" y="0" />
+      <use href="#exchange-circle" x="260" y="492.5" />
+      <use href="#station-image" x="0" y="0" />
+      <g id="station-user-testing-group">
+        <text id="station-user-testing" class="station-label">
+          <tspan x="215" y="508">User</tspan>
+          <tspan x="215" y="514">Testing</tspan>
+        </text>
+        <use id="station-user-testing-rect" href="#station-rect" 
+          x="225" y="495.4" fill="#88aa00" />
+      </g>
+      <use href="#exchange-circle" x="185" y="493" />
+      <g id="station-audio-group">
+        <text id="station-audio" class="station-label"
+          x="125" y="508">Audio</text>
+        <use id="station-audio-rect" href="#station-rect" 
+          x="135" y="495.4" fill="#88aa00" />
+      </g>
+      <g id="station-spiral-group">
+        <text id="station-spiral" class="station-label"
+          x="94" y="483">Spiral</text>
+        <use id="station-spiral-rect" href="#station-rect" 
+          x="100" y="488" fill="#88aa00" />
+      </g>
+      <g id="station-preprocessing-group">
+        <text id="station-preprocessing" class="station-label"
+          x="65" y="508">Preprocessing</text>
+        <use id="station-preprocessing-rect" href="#station-rect" 
+          x="75" y="495.4" fill="#88aa00" />
+      </g>
+      <g id="station-rhyming-scheme-group">
+        <text id="station-rhyming-scheme" class="station-label">
+          <tspan x="10" y="410">Rhyming</tspan>
+          <tspan x="10" y="416">Scheme</tspan>
+        </text>
+        <use id="station-rhyming-scheme-rect" href="#station-rect" 
+          x="62" y="412" fill="#88aa00" transform="rotate(90,62,412)" />
+      </g>
+      <use href="#exchange-circle" x="64.5" y="325" />
+      <use href="#station-uncreativity" x="0" y="0" />
+      <use href="#exchange-circle" x="64.5" y="265" />
+      <text id="station-anthropomorphism" class="station-label">
+        <tspan x="85" y="265">Anthropo-</tspan>
+        <tspan x="85" y="272">morphism</tspan>
+      </text>
+      <use href="#exchange-circle" x="74.5" y="250" />
+      <use href="#station-CSF" x="0" y="0" />
+      <use href="#exchange-circle" x="166" y="155" />
+      <use href="#station-framework" x="0" y="0" />
+    </g> <!-- END ASPIRATIONS LABELS -->
+
+    <!-- OUTRODUCTION LABELS -->
+    <g id="outroduction-14-labels-group" class="station-label-group">
+      <use href="#exchange-circle" x="645" y="322" />
+      <text id="station-answers" class="station-label"
+        x="635" y="335">Answers</text>
+      <use href="#exchange-circle" x="614" y="322" />
+      <use href="#exchange-circle" x="593" y="322" />
+      <use href="#exchange-circle" x="564" y="311" />
+      <use href="#station-contributions1" x="0" y="0" />
+      <use href="#exchange-circle" x="451" y="362.5" />
+      <use href="#station-creativity-intelligence" x="0" y="0" />
+      <use href="#exchange-circle" x="415" y="400" />
+      <use href="#station-programmer" x="0" y="0" />
+      <use href="#exchange-circle" x="530.5" y="276" />
+      <use href="#station-publications" x="0" y="0" />
+      <g id="station-observations-group">
+        <text id="station-observations" class="station-label"
+          x="445" y="265">Observations</text>
+        <use id="station-observations-rect" href="#station-rect" 
+          x="500" y="250" fill="#0080b3" transform="rotate(45,500,250)" />
+      </g>
+      <use href="#exchange-circle" x="425" y="182" />
+      <use href="#exchange-circle" x="415" y="182" />
+      <use href="#exchange-circle" x="362" y="85" />
+      <use href="#station-computational-creativity" x="0" y="0" />
+      <use href="#exchange-circle" x="295" y="182" />
+      <use href="#exchange-circle" x="192" y="132" />
+      <use href="#station-contributions2" x="0" y="0" />
+      <use href="#exchange-circle" x="83" y="52.5" />
+      <use href="#exchange-circle" x="83" y="42.5" />
+      <text id="station-output-input" class="station-label"
+        x="75" y="10" text-anchor=end>
+        <tspan x="75" dy="1em">Output</tspan>
+        <tspan x="75" dy="1em">- Input</tspan>
+      </text>
+    </g> <!-- END OUTRODUCTION LABELS -->
+
+  </g> <!-- END FOREGROUND LABELS -->
+
+  <!-- EXCHANGE CONNECTORS -->
+  <g id="exchange-connectors">
+
+    <g class="connect-1 connect-2" id="motivations-connector">
+      <rect x="333.5" y="175.5" width="3" height="24" fill="black"/>
+      <rect x="334.5" y="174.5" width="1" height="26" fill="white"/>
+    </g>
+
+    <g class="connect-4 connect-2 connect-10" id="babel-connector">
+      <rect x="188.3" y="458.6" width="3.4" height="3" fill="black"/>
+      <rect x="188.3" y="459.6" width="3.4" height="1" fill="white"/>
+      <rect x="178.3" y="458.6" width="3.4" height="3" fill="black"/>
+      <rect x="177.3" y="459.6" width="4.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-4 connect-2 connect-10" id="queneau-connector">
+      <rect x="188.3" y="428.6" width="3.4" height="3" fill="black"/>
+      <rect x="188.3" y="429.6" width="3.4" height="1" fill="white"/>
+      <rect x="178.3" y="428.6" width="3.4" height="3" fill="black"/>
+      <rect x="177.3" y="429.6" width="4.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-4 connect-2 connect-10" id="borges-connector">
+      <rect x="188.3" y="414.6" width="3.4" height="3" fill="black"/>
+      <rect x="188.3" y="415.6" width="3.4" height="1" fill="white"/>
+      <rect x="178.3" y="414.6" width="3.4" height="3" fill="black"/>
+      <rect x="177.3" y="415.6" width="4.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-4 connect-2 connect-10" id="faustroll-connector">
+      <rect x="188.3" y="398.6" width="3.4" height="3" fill="black"/>
+      <rect x="188.3" y="399.6" width="3.4" height="1" fill="white"/>
+      <rect x="178.3" y="398.6" width="3.4" height="3" fill="black"/>
+      <rect x="177.3" y="399.6" width="4.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-4 connect-2 connect-5 connect-10" id="syzygy-surfer-connector">
+      <rect x="188.3" y="338.6" width="3.4" height="3" fill="black"/>
+      <rect x="188.3" y="339.6" width="3.4" height="1" fill="white"/>
+      <rect x="178.3" y="338.6" width="3.4" height="3" fill="black"/>
+      <rect x="177.3" y="339.6" width="4.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-4 connect-2 connect-10 connect-5" id="oulipo-connector">
+      <rect x="188.3" y="308.6" width="3.4" height="3" fill="black"/>
+      <rect x="188.3" y="309.6" width="3.4" height="1" fill="white"/>
+
+      <rect x="177.5" y="308.6" width="4.3" height="3" fill="black"/>
+      <rect x="177.5" y="309.6" width="4.3" height="1" fill="white"/>
+
+      <rect x="165.5" y="315.5" width="6.5" height="3" fill="black" 
+        transform="rotate(-45,165.5,315.5)" />
+      <rect x="165.7" y="316.7" width="8" height="1" fill="white"
+        transform="rotate(-45,165.7,316.7)" />
+    </g>
+
+    <g class="connect-4 connect-1" id="pataintro-connector">
+      <rect x="508" y="263" width="12.3" height="3" fill="black" 
+        transform="rotate(-45,508,263)"/>
+      <rect x="506" y="266" width="16" height="1" fill="white"
+        transform="rotate(-45,505.2,263)"/>
+    </g>
+
+    <g class="connect-5 connect-3" id="disciplines-connector">
+      <rect x="410" y="128" width="3" height="3" fill="black" 
+        transform="rotate(-45,410,128)" />
+      <rect x="409.2" y="129.2" width="5" height="1" fill="white"
+        transform="rotate(-45,410.2,129.2)" />
+      <rect x="418" y="121" width="3" height="3" fill="black" 
+        transform="rotate(-45,418,121)" />
+      <rect x="417.2" y="123" width="6" height="1" fill="white"
+        transform="rotate(-45,417.2,123)" />
+    </g>
+
+    <g class="connect-5 connect-4 connect-8" id="pataphysics-creativity-connector">
+      <rect x="417" y="206" width="18.5" height="3" fill="black" 
+        transform="rotate(-45,417,206)" />
+      <rect x="416" y="208.5" width="22" height="1" fill="white"
+        transform="rotate(-45,416,208.5)" />
+    </g>
+
+    <g class="connect-5 connect-3 connect-8" id="digital-humanities-connector">
+      <rect x="418.3" y="268.7" width="3.4" height="3" fill="black"/>
+      <rect x="418.3" y="269.7" width="3.4" height="1" fill="white"/>
+      <rect x="428.3" y="268.7" width="3.4" height="3" fill="black"/>
+      <rect x="428.3" y="269.7" width="3.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-3" id="arts-humanities-connector">
+      <rect x="418.3" y="284.7" width="3.4" height="3" fill="black"/>
+      <rect x="418.3" y="285.7" width="3.4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-3" id="subjectivity-connector">
+      <rect x="373.5" y="346.5" width="3" height="3.3" fill="black"/>
+      <rect x="374.5" y="346.5" width="1" height="3.3" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-3" id="objectivity-connector">
+      <rect x="328.5" y="346.5" width="3" height="3.3" fill="black"/>
+      <rect x="329.5" y="346.5" width="1" height="3.3" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-6 connect-7" id="searching-browsing-connector">
+      <rect x="377" y="94" width="31.5" height="3" fill="black" 
+        transform="rotate(-45,377,94)" />
+      <rect x="377" y="95.3" width="33" height="1" fill="white"
+        transform="rotate(-45,377,95.3)" />
+      <rect x="401" y="50" width="3" height="16.5" fill="black" />
+      <rect x="402" y="49" width="1" height="18" fill="white" />
+    </g>
+
+    <g class="connect-3 connect-6" id="unite-conquer-connector">
+      <rect x="426" y="131.5" width="24" height="3" fill="black" 
+        transform="rotate(-45,426,131.5)" />
+      <rect x="426" y="132.8" width="25" height="1" fill="white"
+        transform="rotate(-45,426,132.8)" />
+    </g>
+
+    <g class="connect-5 connect-7 connect-8 connect-12" id="processes-connector">
+      <rect x="198.5" y="55.8" width="3" height="2.8" fill="black"/>
+      <rect x="199.5" y="55.8" width="1" height="3" fill="white"/>
+      <rect x="198.5" y="46" width="3" height="2.8" fill="black"/>
+      <rect x="199.5" y="46" width="1" height="3" fill="white"/>
+      <rect x="198.5" y="35.5" width="3" height="2.8" fill="black"/>
+      <rect x="199.5" y="35.3" width="1" height="4" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-7 connect-12" id="computers-connector">
+      <rect x="298.5" y="35.5" width="3" height="13.5" fill="black"/>
+      <rect x="299.5" y="35.3" width="1" height="14" fill="white"/>
+      <rect x="298.5" y="55.8" width="3" height="2.8" fill="black"/>
+      <rect x="299.5" y="55.8" width="1" height="2.8" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-7" id="creative-computing-connector">
+      <rect x="352" y="72" width="5" height="3" fill="black" 
+        transform="rotate(-45,352,72)" />
+      <rect x="352" y="73.3" width="6" height="1" fill="white"
+        transform="rotate(-45,352,73.3)" />
+      <rect x="361" y="64" width="2.5" height="3" fill="black"
+        transform="rotate(-45,361,64)" />
+      <rect x="361" y="65.3" width="4" height="1" fill="white"
+        transform="rotate(-45,361,65.3)" />
+    </g>
+
+    <g class="connect-5 connect-7 connect-8" id="computational-creativity-connector">
+      <rect x="363.5" y="81.5" width="3" height="3" fill="black" 
+        transform="rotate(-45,363.5,81.5)" />
+      <rect x="363" y="83.5" width="5" height="1" fill="white"
+        transform="rotate(-45,363,83.5)" />
+      <rect x="371" y="74.5" width="3.5" height="3" fill="black" 
+        transform="rotate(-45,371,74.5)" />
+      <rect x="370" y="77" width="6.5" height="1" fill="white"
+        transform="rotate(-45,370,77)" />
+    </g>
+    
+    <g class="connect-3 connect-7" id="tmpr-connector">
+      <rect x="435" y="20" width="1.5" height="3" fill="black" 
+          transform="rotate(45,435,20)" />
+      <rect x="434" y="20" width="2" height="1" fill="white"
+        transform="rotate(45,434,20)" />
+    </g>
+
+    <g class="connect-7 connect-8 connect-9 connect-12 connect-13" id="csf-connector">
+      <rect x="37.5" y="248.5" width="2.3" height="3" fill="black"/>
+      <rect x="37" y="249.5" width="3" height="1" fill="white"/>
+      <rect x="47" y="248.5" width="4" height="3" fill="black"/>
+      <rect x="46.5" y="249.5" width="5" height="1" fill="white"/>
+      <rect x="57.8" y="248.5" width="13.5" height="3" fill="black"/>
+      <rect x="57.8" y="249.5" width="13.5" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-8 connect-12" id="models-connector">
+      <rect x="46.8" y="98.5" width="4.3" height="3" fill="black"/>
+      <rect x="46.8" y="99.5" width="4.6" height="1" fill="white"/>
+      <rect x="57.8" y="98.5" width="3" height="3" fill="black"/>
+      <rect x="57.8" y="99.5" width="3" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-8 connect-9" id="mimicry-connector">
+      <rect x="57.8" y="360.5" width="13" height="3" fill="black"/>
+      <rect x="57.8" y="361.5" width="14" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-7 connect-9" id="un-definitions-connector">
+      <rect x="37.2" y="279" width="33.5" height="3" fill="black"/>
+      <rect x="37.2" y="280" width="34" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-7 connect-9" id="criteria-connector">
+      <rect x="37.2" y="215" width="33.5" height="3" fill="black"/>
+      <rect x="37.2" y="216" width="34" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-5 connect-9" id="boden-connector">
+      <rect x="67.5" y="203" width="16" height="3" fill="black"/>
+      <rect x="67.5" y="204" width="16" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-8 connect-9" id="5pmodel-connector">
+      <rect x="58" y="168.5" width="59" height="3" fill="black"/>
+      <rect x="58" y="169.5" width="59.5" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-6 connect-10 connect-12 connect-13" id="design-connector">
+      <rect x="596.5" y="283.5" width="4" height="3" fill="black"/>
+      <rect x="595" y="284.5" width="6" height="1" fill="white"/>
+      <rect x="608" y="283.5" width="2.5" height="3" fill="black"/>
+      <rect x="608" y="284.5" width="2.5" height="1" fill="white"/>
+      <rect x="618" y="283.5" width="2.5" height="3" fill="black"/>
+      <rect x="617" y="284.5" width="4" height="1" fill="white"/>
+    </g>
+
+    <g class="connect-6 connect-10 connect-12 connect-13" id="index-connector">
+      <rect x="526" y="452" width="3" height="3.5" fill="black" 
+          transform="rotate(-45,526,452)" />
+      <rect x="526.5" y="451" width="1" height="5" fill="white"
+        transform="rotate(-45,526.5,451)" />
+      <rect x="518" y="443" width="3" height="5" fill="black" 
+          transform="rotate(-45,518,443)" />
+      <rect x="518.4" y="442" width="1" height="6" fill="white"
+        transform="rotate(-45,518.4,442)" />
+      <rect x="534" y="460" width="3" height="3" fill="black" 
+          transform="rotate(-45,534,460)" />
+      <rect x="534" y="458.5" width="1" height="4.5" fill="white"
+        transform="rotate(-45,534,458.5)" />
+    </g>
+
+    <g class="connect-2 connect-10 connect-12" id="corpora-connector">
+      <rect x="192.5" y="364.5" width="3" height="24" fill="black" transform="rotate(45,192.5,364.5)"/>
+      <rect x="194" y="364.4" width="1" height="25.5" fill="white" transform="rotate(45,194,364.4)"/>
+      <rect x="172.5" y="388.5" width="3" height="8" fill="black"/>
+      <rect x="173.5" y="388.5" width="1" height="8" fill="white"/>
+    </g>
+
+    <g class="connect-2 connect-5 connect-6 connect-10" id="coder-culture-connector">
+      <rect x="177.5" y="351" width="14" height="3" fill="black"/>
+      <rect x="177.5" y="352" width="14" height="1" fill="white"/>
+      <rect x="173" y="355.5" width="3" height="13.5" fill="black"/>
+      <rect x="174" y="355.5" width="1" height="13.5" fill="white"/>
+    </g>
+
+    <g class="connect-1 connect-11" id="publications-connector">
+      <rect x="538.5" y="267" width="4" height="3" fill="black" transform="rotate(-45,538.5,267)" />
+      <rect x="538.5" y="268.5" width="5" height="1" fill="white" transform="rotate(-45,538.5,268.5)"/>
+      <rect x="532.5" y="272" width="1" height="3" fill="black" transform="rotate(-45,532.5,272)" />
+      <rect x="532" y="273.5" width="3" height="1" fill="white" transform="rotate(-45,532,273.5)"/>
+    </g>
+
+    <g class="connect-1 connect-9 connect-11" id="contributions2-connector">
+      <rect x="179.5" y="112.5" width="17" height="3" fill="black"/>
+      <rect x="179.5" y="113.5" width="18" height="1" fill="white"/>
+      <rect x="198.5" y="116.5" width="3" height="3" fill="black"/>
+      <rect x="199.5" y="116.5" width="1" height="3" fill="white"/>
+      <rect x="197" y="125" width="3" height="5" fill="black" transform="rotate(45,197,125)" />
+      <rect x="199" y="124.5" width="1" height="7" fill="white" transform="rotate(45,199,124.5)" />
+    </g>
+
+    <g class="connect-6 connect-12" id="damerau-levenshtein-connector">
+      <rect x="568.5" y="232" width="29" height="3" fill="black" transform="rotate(-45,568.5,232)" />
+      <rect x="568" y="234" width="31" height="1" fill="white" transform="rotate(-45,568,234)" />
+    </g>
+
+    <g class="connect-10 connect-12" id="numbers-connector">
+      <rect x="596.5" y="338.5" width="14" height="3" fill="black" />
+      <rect x="596" y="339.5" width="15" height="1" fill="white" />
+    </g>
+
+    <g class="connect-11 connect-12" id="pataphysicalisation-connector">
+      <rect x="586.5" y="360.5" width="3" height="3" fill="black" />
+      <rect x="586" y="361.5" width="4" height="1" fill="white" />
+      <rect x="596.5" y="360.5" width="24.5" height="3" fill="black" />
+      <rect x="595" y="361.5" width="27" height="1" fill="white" />
+      <rect x="612" y="362.5" width="3" height="7.5" fill="black" />
+      <rect x="613" y="362" width="1" height="8" fill="white" />
+    </g>
+
+    <g class="connect-6 connect-12" id="wordnet-connector">
+      <rect x="551" y="366" width="3" height="36" fill="black" transform="rotate(-45,551,366)" />
+      <rect x="551.4" y="365" width="1" height="37" fill="white" transform="rotate(-45,551.4,365)" />
+      <rect x="582" y="397" width="3" height="13.5" fill="black" transform="rotate(-45,582,397)" />
+      <rect x="581.4" y="395" width="1" height="16" fill="white" transform="rotate(-45,581.4,395)" />
+    </g>
+
+    <g class="connect-12 connect-13" id="apis-connector">
+      <rect x="596" y="223.5" width="25" height="3" fill="black" />
+      <rect x="595" y="224.5" width="27" height="1" fill="white" />
+    </g>
+
+    <g class="connect-6 connect-12 connect-13" id="nlp-connector">
+      <rect x="596" y="258.5" width="25" height="3" fill="black" />
+      <rect x="595" y="259.5" width="27" height="1" fill="white" />
+    </g>
+
+    <g class="connect-11 connect-13" id="dennis-algorithms-connector">
+      <rect x="619" y="419" width="3" height="3" fill="black" transform="rotate(-45,619,419)" />
+      <rect x="618" y="420" width="5" height="1" fill="white" transform="rotate(-45,619,419)"/>
+    </g>
+
+    <g class="connect-11 connect-13" id="patadata-ontology-connector">
+      <rect x="644.5" y="444" width="3" height="3" fill="black" transform="rotate(-45,644.5,444)" />
+      <rect x="644" y="445.7" width="5" height="1" fill="white" transform="rotate(-45,644,445.7)"/>
+    </g>
+
+    <g class="connect-11 connect-13" id="digital-opera-connector">
+      <rect x="669" y="469" width="3" height="3" fill="black" transform="rotate(-45,669,469)" />
+      <rect x="669" y="470.4" width="5" height="1" fill="white" transform="rotate(-45,669,470.4)"/>
+    </g>
+
+    <g class="connect-10 connect-13" id="video-connector">
+      <rect x="468.5" y="486.5" width="3" height="3" fill="black" />
+      <rect x="469.5" y="486.5" width="1" height="3" fill="white" />
+    </g>
+
+    <g class="connect-6 connect-13" id="maxent-obscurity-connector">
+      <rect x="323.5" y="475.5" width="3" height="13" fill="black" />
+      <rect x="324.5" y="475.5" width="1" height="14" fill="white" />
+    </g>
+
+    <g class="connect-10 connect-13" id="image-connector">
+      <rect x="258.5" y="486.5" width="3" height="2.5" fill="black" />
+      <rect x="259.5" y="486" width="1" height="4" fill="white" />
+    </g>
+
+    <g class="connect-12 connect-13" id="uncreativity-connector">
+      <rect x="46.8" y="323.5" width="14" height="3" fill="black" />
+      <rect x="46" y="324.5" width="16" height="1" fill="white" />
+    </g>
+
+    <g class="connect-9 connect-13" id="anthropomorphism-connector">
+      <rect x="68" y="263.5" width="3" height="3" fill="black" />
+      <rect x="67" y="264.5" width="5" height="1" fill="white" />
+    </g>
+
+    <g class="connect-9 connect-11 connect-13" id="framework-connector">
+      <rect x="154.5" y="142" width="3.5" height="3" fill="black" transform="rotate(45,154.5,142)" />
+      <rect x="153.2" y="142" width="5" height="1" fill="white" transform="rotate(45,153.2,142)" />
+      <rect x="161.5" y="149" width="3.5" height="3" fill="black" transform="rotate(45,161.5,149)" />
+      <rect x="160.2" y="149" width="5" height="1" fill="white" transform="rotate(45,160.2,149)" />
+    </g>
+
+    <g class="connect-1 connect-14" id="questions-answers-connector">
+      <rect x="643.5" y="315.5" width="3" height="3.2" fill="black" />
+      <rect x="644.5" y="315" width="1" height="4" fill="white" />
+    </g>
+
+    <g class="connect-1 connect-14" id="contributions-1-connector">
+      <rect x="565" y="307.5" width="2.5" height="3" fill="black" transform="rotate(-45,565,307.5)" />
+      <rect x="565" y="309" width="4" height="1" fill="white" transform="rotate(-45,565,309)" />
+    </g>
+
+    <g class="connect-9 connect-14" id="programmer-connector">
+      <rect x="401" y="388.5" width="3" height="14.5" fill="black" transform="rotate(-45,401,388.5)" />
+      <rect x="401" y="387" width="1" height="16" fill="white" transform="rotate(-45,401,387)" />
+    </g>
+
+    <g class="connect-4 connect-14" id="pata-outro-connector">
+      <rect x="293.5" y="185.5" width="3" height="3" fill="black" />
+      <rect x="294.5" y="185.5" width="1" height="4" fill="white" />
+    </g>
+  </g> <!-- END EXCHANGE CONNECTORS -->
+
+
+
+  <!-- <rect id="train" fill="black" x="5" y="5" width="20" height="10"/>
+  <animateMotion
+    href="#train"
+    begin="click"
+    x="-5" y="-10"
+    dur="20s"
+    begin="0s"
+    fill="remove"
+    repeatCount="1"
+    rotate="auto"
+    path="M 64 62, 338 62, 415 138, 415 352.5, 198 352.5, 64 220, 64 62"
+    >
+  </animateMotion> -->
+
+
+</svg>
+
+ 
+<footer class="hide">
+  <p>
+    <!-- <label for="show-coords">Coords</label>
+    <input id="show-coords" type="checkbox" checked> -->
+    <label for="show-clusters">Clusters</label>
+    <input id="show-clusters" type="checkbox" checked>
+    <!-- <label for="show-labels">Labels</label>
+    <input id="show-labels" type="checkbox" checked> -->
+    <!-- <label for="show-lines">Lines</label>
+    <input id="show-lines" type="checkbox" checked> -->
+    <!-- <label for="show-oldlines">Old Lines</label>
+    <input id="show-oldlines" type="checkbox" checked> -->
+    <label for="show-appendices">Appendices</label>
+    <input id="show-appendices" type="checkbox" checked>
+    <!-- <label for="show-exchanges">Exchanges</label>
+    <input id="show-exchanges" type="checkbox"> -->
+  <!-- </p>
+  <p> -->
+    <label for="show-1">1</label>
+    <input id="show-1" type="checkbox" checked>
+    <label for="show-2">2</label>
+    <input id="show-2" type="checkbox" checked>
+    <label for="show-3">3</label>
+    <input id="show-3" type="checkbox" checked>
+    <label for="show-4">4</label>
+    <input id="show-4" type="checkbox" checked>
+    <label for="show-5">5</label>
+    <input id="show-5" type="checkbox" checked>
+    <label for="show-6">6</label>
+    <input id="show-6" type="checkbox" checked>
+    <label for="show-7">7</label>
+    <input id="show-7" type="checkbox" checked>
+    <label for="show-8">8</label>
+    <input id="show-8" type="checkbox" checked>
+    <label for="show-9">9</label>
+    <input id="show-9" type="checkbox" checked>
+    <label for="show-10">10</label>
+    <input id="show-10" type="checkbox" checked>
+    <label for="show-11">11</label>
+    <input id="show-11" type="checkbox" checked>
+    <label for="show-12">12</label>
+    <input id="show-12" type="checkbox" checked>
+    <label for="show-13">13</label>
+    <input id="show-13" type="checkbox" checked>
+    <label for="show-14">14</label>
+    <input id="show-14" type="checkbox" checked>
+  </p>
+</footer>
+
+
+
+
+  <script src="map-scripts.js"></script>
+</body>
+</html>

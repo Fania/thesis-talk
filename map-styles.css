@@ -1,0 +1,195 @@
+input {
+  margin-right: 1.5em;
+}
+
+#test-svg {
+  border: 1px solid black;
+}
+
+h1 {
+  font-variant: small-caps;
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  /* max-width: 100%; */
+  max-height: 85vh;
+  /* border: 1px solid black; */
+}
+
+/*
+all lines (incl. labels): 
+#lines
+
+just the lines:
+[id$="line-group"]
+
+*/
+
+
+/* UTILITY */
+
+.hide {
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.hide p input {
+  margin: 0;
+}
+
+.centerorigin {
+  transform-origin: 50% 50%;
+}
+
+.dim {
+  opacity: 0.2;
+  transition: 3s;
+}
+
+.undimtext {
+  fill: #000000;
+}
+
+.dimtext {
+  fill: #eeeeee;
+  transition: 3s;
+}
+
+
+
+/* ends in */
+[class$='label'] {
+  /* visibility: hidden; */
+}
+
+/* shared stations? */
+
+/* #introduction-line-group, #introduction-1-labels, */
+/* #inspirations-line-group, #inspirations-2-labels, */
+/* #methodology-line-group, #methodology-3-labels, */
+/* #technology-line-group, #technology-6-labels, */
+/* #evaluation-line-group, #evaluation-7-labels, */
+/* #patanalysis-line-group, #patanalysis-12-labels, */
+/* [id$="line-group"], */
+/* #appendices, */
+/* #topic-clusters, */
+.old-line
+{
+  visibility: hidden;
+}
+
+
+
+/* TOPIC CLUSTERS */
+.cluster-rect {
+  fill: #ececec;
+}
+.cluster-text {
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-weight: bold;
+  fill: #ececec;
+}
+
+/* APPENDICES */
+.appendix-river {
+  fill: none;
+  stroke-width: 14.17322922;
+  stroke-linecap: square;
+}
+.appendix-lake {
+  stroke-width: 14.17322922;
+}
+.appendix-text {
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-weight: bold;
+  font-size: 12.50000095px;
+  fill: #ffffff;
+}
+.appendix-port {
+  fill: #b1d7ff;
+  stroke: #000007;
+  transform-origin: 50% 50%;
+}
+
+/* HOVER OVER EFFECTS */
+/* .highlight:hover, .highlight-group:hover path, .highlight-river:hover path {
+  stroke: #000000;
+}
+.highlight-group:hover text {
+  fill: #000000;
+}
+.highlight-river:hover text, .highlight-lake:hover text {
+  fill: #ffffff;
+}
+.highlight-lake:hover path {
+  stroke: #000000;
+  fill: #000000;
+} */
+
+/* CHAPTER LINES */
+.line {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.old-line {
+  fill: none;
+  stroke-width: 32.67607117;
+  stroke-linecap: round;
+}
+.line-name {
+  font-weight: bold;
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-size: 7.5px;
+  line-height: 1.25;
+}
+.station-label {
+  font-size: 7.5px;
+  line-height: 0.80000001;
+  font-family: 'Bookman Old Style', serif;
+  z-index: 1000;
+}
+/* .station-rect {
+  width: 1.3436904;
+  height: 2.2674296;
+} */
+
+/* EXCHANGES */
+/* starts in */
+[class^='exchange'] {
+  /* visibility: hidden; */
+}
+
+
+
+/* SHAPES */
+.shape-circle {
+  fill: #ffffff; 
+  stroke: #000000;
+}
+
+
+
+@media only screen and (min-width: 900px) {
+  footer {
+    float: right;
+  } 
+}
