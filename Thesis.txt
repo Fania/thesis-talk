@@ -1,5 +1,17 @@
 # Thesis DTP Talk
 
+Live:
+gource --seconds-per-day 0.1 --title "Fania's PhD Thesis" --hide dirnames,filenames,usernames -f --disable-bloom
+
+
+Video:
+gource --seconds-per-day 0.1 --title "Fania's PhD Thesis" --hide dirnames,filenames,usernames -f --disable-bloom --hide-mouse --stop-at-end -1280x720 -r 60 -o output.ppm
+
+D:\Programs\ffmpeg-20180708-3a2d21b-win64-static\bin\ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i output.ppm  -vcodec libx264 -r 60 -qscale 0 gource.mp4
+
+
+
+
 
 Hi Fania! 
 
