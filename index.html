@@ -37,6 +37,10 @@
 			.reveal sup { 
 				font-size: .6em;
 			}
+			.reveal table td, .reveal table th {
+				border: 0;
+				font-size: .7em;
+			}
 			.reveal video {
 				width: 900px;
 				height: 600px;
@@ -328,12 +332,17 @@ Latex handled the complexity of my project better than Word. I liked having indi
               
 In principle, I followed a **[classic thesis structure](https://www.vitae.ac.uk/doing-research/doing-a-doctorate/completing-your-doctorate/writing-and-submitting-your-doctoral-thesis/structuring-your-thesis)**:
 
-- Introduction
-- Methodology
-- State of the Art
-- Claims / Contributions
-- Critical Analysis / Evaluation
-- Conclusion
+|                                   |                          |
+|:-                                 |                        -:|
+| 1. Introduction                   | HΣLLΘ WΘRLD              |
+| 2. Methodology                    | TΘΘLS OF THE TR∀DΣ       |
+| 3. State of the Art               | THE CΘRE: TΣCHNΘLΘGIC    |
+| 4. Claims / Contributions         | THE CΘRE: TΣCHNΘPR∀CTICΣ | 
+| 5. Critical Analysis / Evaluation | MΣT∀-LΘGIC∀LYSIS         |
+| 6. Conclusion                     | H∀PPILY ΣVΣR ∀FTΣR       |
+
+Notes:
+
 </textarea></section>
         
 
@@ -344,19 +353,39 @@ In principle, I followed a **[classic thesis structure](https://www.vitae.ac.uk/
             <textarea data-template>
 ### Personalisation
 
-But I also added extra chapters where I felt it was needed:
+I like **structure** and prefer shorter chapters, sections, and subsections.
 
-- un- / related work
-- theoretical contributions
-- applications 
-- future work
+So, I had 14 chapters and 5 appendices in total.
+
+- un- / related work and inspirations
+- transdisciplinary literature review (4 chapters)
+- claims and contributions (3 chapters)  	
+- applications (patadata ontology, digital opera)
+- future / unfinished work
+
+I also added **[interludes](https://dr.physics.wtf/files/FR-thesis-small.pdf#page=145)** containing spare quotes.
 
 Notes: 
 
-
-Digital Opera, Andrew Dennis
           	</textarea>
           </section>
+
+
+
+<section>
+
+<h2>Visualisation</h2>
+
+<iframe src="graph.html" width="900" height="200" scrolling="no"></iframe>
+
+
+
+
+
+
+
+</section>
+
 
 
 
@@ -394,6 +423,8 @@ I hadn't made decisions about this in my early stages and just did what I did. S
 					<section data-markdown>
 						<textarea data-template>
 ### [Foundation](https://dr.physics.wtf/html/foundation.html) / [Interpretation](https://dr.physics.wtf/html/interpretation.html)
+
+*[foundation](https://dr.physics.wtf/html/foundation.html) <i class="fas fa-arrow-circle-right highlight"></i> [interpretation](https://dr.physics.wtf/html/interpretation.html) <i class="fas fa-arrow-circle-right highlight"></i> [implementation](https://dr.physics.wtf/html/implementation.html)*
 
 - compare, contrast, critisice existing frameworks
 - relate them to pataphysics
@@ -742,6 +773,12 @@ Any questions?
 				center: true,
 				touch: true,
 				previewLinks: false,
+				// your allotted time for presentation
+				allottedTime: 30 * 60 * 1000, // 30 minutes
+				// - (optional) height of page/time progress bar
+				progressBarHeight: 10,
+				// - (optional) bar color
+				barColor: 'rgb(139,124,105)',
 				// showNotes: true,
 				// parallaxBackgroundImage: 'imgs/dave.png',
 				// parallaxBackgroundSize: '1050px 669px',
@@ -757,7 +794,8 @@ Any questions?
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/menu/menu.js'}
+					{ src: 'plugin/menu/menu.js'},
+					{ src: 'plugin/elapsed-time-bar/elapsed-time-bar.js'}
 				],
 
 				menu: {
