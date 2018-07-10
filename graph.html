@@ -6,6 +6,11 @@
   <title>Thesis Graph</title>
 
   <style>
+    a {
+      height: 100px;
+      display: block;
+    }
+
     .bar {
       box-sizing: border-box;
       display: flex;
@@ -16,14 +21,20 @@
       margin: 0;
       padding: 0;
     }
+    .x-chunk {
+      height: 20px;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
 
     #title {
       width: 0.970873786%;
-      background-color: #314956;
+      background-color: black;
     }
     #preface {
       width: 5.339805825%;
-      background-color: #4E496E;
+      background-color: #956248;
     }
     #part1 {
       width: 0.485436893%;
@@ -63,7 +74,7 @@
     }
     #interlude1 {
       width: 0.485436893%;
-      background-color: gray;
+      background-color: white;
     }
     #part3 {
       width: 0.485436893%;
@@ -91,7 +102,7 @@
     }
     #interlude2 {
       width: 0.485436893%;
-      background-color: gray;
+      background-color: white;
     }
     #part5 {
       width: 0.485436893%;
@@ -119,7 +130,7 @@
     }
     #interlude3 {
       width: 0.485436893%;
-      background-color: gray;
+      background-color: white;
     }
     #part7 {
       width: 0.485436893%;
@@ -151,56 +162,63 @@
     }
 
 
-
-    /* #x-preface {
-      width: 6.310679612%;
-      background-color: #4E496E;
-    } */
-    /* #part1 {
-      width: 0.485436893%;
+    #x-title {
+      width: 0.970874%;
       background-color: black;
     }
-    #part2 {
-      width: 0.485436893%;
-      background-color: black;
+    #x-preface {
+      width: 5.339806%;
+      background-color: #956248;
     }
-    #interlude1 {
-      width: 0.485436893%;
-      background-color: gray;
+    #x-part1 {
+      width: 9.708737864%;
+      background-color: #558bde;
     }
-    #part3 {
-      width: 0.485436893%;
-      background-color: black;
+    #x-part2 {
+      width: 18.93203883%;
+      background-color: #c88657;
     }
-    #part4 {
+    #x-interlude1 {
       width: 0.485436893%;
-      background-color: black;
+      background-color: white;
     }
-    #interlude2 {
+    #x-part3 {
+      width: 7.766990291%;
+      background-color: #8800c4;
+    }
+    #x-part4 {
+      width: 11.16504854%;
+      background-color: #15556f;
+    }
+    #x-interlude2 {
       width: 0.485436893%;
-      background-color: gray;
+      background-color: white;
     }
-    #part5 {
-      width: 0.485436893%;
-      background-color: black;
+    #x-part5 {
+      width: 13.59223301%;
+      background-color: #c4552a;
     }
-    #part6 {
-      width: 0.485436893%;
-      background-color: black;
+    #x-part6 {
+      width: 1.45631068%;
+      background-color: #0080b3;
     }
-    #references {
+    #x-references {
       width: 5.825242718%;
       background-color: #956248;
     }
-    #interlude3 {
+    #x-interlude3 {
       width: 0.485436893%;
-      background-color: gray;
+      background-color: white;
     }
-    #part7 {
-      width: 0.485436893%;
+    #x-part7 {
+      width: 23.30097087%;
+      background-color: #95c3ea;
+    }
+    #x-kthxbye {
+      width: 0.485437%;
       background-color: black;
     }
-  */
+ 
   
   </style>
 </head>
@@ -210,58 +228,87 @@
 
 
 <div class="bar">
-  <div id="title" class="chunk"></div>
-  <div id="preface" class="chunk"></div>
-  <div id="part1" class="chunk"></div>
-  <div id="introduction" class="chunk"></div>
-  <div id="inspirations" class="chunk"></div>
-  <div id="methodology" class="chunk"></div>
-  <div id="part2" class="chunk"></div>
-  <div id="pataphysics" class="chunk"></div>
-  <div id="creativity" class="chunk"></div>
-  <div id="technology" class="chunk"></div>
-  <div id="evaluation" class="chunk"></div>
-  <div id="interlude1" class="chunk"></div>
-  <div id="part3" class="chunk"></div>
-  <div id="foundations" class="chunk"></div>
-  <div id="interpretation" class="chunk"></div>
-  <div id="part4" class="chunk"></div>
-  <div id="implementation" class="chunk"></div>
-  <div id="application" class="chunk"></div>
-  <div id="interlude2" class="chunk"></div>
-  <div id="part5" class="chunk"></div>
-  <div id="patanalysis" class="chunk"></div>
-  <div id="aspirations" class="chunk"></div>
-  <div id="part6" class="chunk"></div>
-  <div id="outroduction" class="chunk"></div>
-  <div id="references" class="chunk"></div>
-  <div id="interlude3" class="chunk"></div>
-  <div id="part7" class="chunk"></div>
-  <div id="appendixA" class="chunk"></div>
-  <div id="appendixB" class="chunk"></div>
-  <div id="appendixC" class="chunk"></div>
-  <div id="appendixD" class="chunk"></div>
-  <div id="appendixE" class="chunk"></div>
-  <div id="kthxbye" class="chunk"></div>
+  <div id="title"          title="Title"          class="chunk">
+    <a href="https://dr.physics.wtf"></a></div>
+  <div id="preface"        title="Preface"        class="chunk">
+    <a href="https://dr.physics.wtf/html/part0.html"></a></div>
+  <div id="part1"          title="Part I"         class="chunk">
+    <a href="https://dr.physics.wtf/html/part0.html"></a></div>
+  <div id="introduction"   title="Introduction"   class="chunk">
+    <a href="https://dr.physics.wtf/html/introduction.html"></a></div>
+  <div id="inspirations"   title="Inspirations"   class="chunk">
+    <a href="https://dr.physics.wtf/html/inspirations.html"></a></div>
+  <div id="methodology"    title="Methodology"    class="chunk">
+    <a href="https://dr.physics.wtf/html/methodology.html"></a></div>
+  <div id="part2"          title="Part II"        class="chunk">
+    <a href="https://dr.physics.wtf/html/part2.html"></a></div>
+  <div id="pataphysics"    title="Pataphysics"    class="chunk">
+    <a href="https://dr.physics.wtf/html/pataphysics.html"></a></div>
+  <div id="creativity"     title="Creativity"     class="chunk">
+    <a href="https://dr.physics.wtf/html/creativity.html"></a></div>
+  <div id="technology"     title="Technology"     class="chunk">
+    <a href="https://dr.physics.wtf/html/technology.html"></a></div>
+  <div id="evaluation"     title="Evaluation"     class="chunk">
+    <a href="https://dr.physics.wtf/html/evaluation.html"></a></div>
+  <div id="interlude1"     title="Interlude 1"    class="chunk"></div>
+  <div id="part3"          title="Part III"       class="chunk">
+    <a href="https://dr.physics.wtf/html/part3.html"></a></div>
+  <div id="foundations"    title="Foundations"    class="chunk">
+    <a href="https://dr.physics.wtf/html/foundations.html"></a></div>
+  <div id="interpretation" title="Interpretation" class="chunk">
+    <a href="https://dr.physics.wtf/html/interpretation.html"></a></div>
+  <div id="part4"          title="Part IV"        class="chunk">
+    <a href="https://dr.physics.wtf/html/part4.html"></a></div>
+  <div id="implementation" title="Implementation" class="chunk">
+    <a href="https://dr.physics.wtf/html/implementation.html"></a></div>
+  <div id="application"    title="Application"    class="chunk">
+    <a href="https://dr.physics.wtf/html/application.html"></a></div>
+  <div id="interlude2"     title="Interlude 2"    class="chunk"></div>
+  <div id="part5"          title="Part V"         class="chunk">
+    <a href="https://dr.physics.wtf/html/part5.html"></a></div>
+  <div id="patanalysis"    title="Patanalysis"    class="chunk">
+    <a href="https://dr.physics.wtf/html/patanalysis.html"></a></div>
+  <div id="aspirations"    title="Aspirations"    class="chunk">
+    <a href="https://dr.physics.wtf/html/aspirations.html"></a></div>
+  <div id="part6"          title="Part VI"        class="chunk">
+    <a href="https://dr.physics.wtf/html/part6.html"></a></div>
+  <div id="outroduction"   title="Outroduction"   class="chunk">
+    <a href="https://dr.physics.wtf/html/outroduction.html"></a></div>
+  <div id="references"     title="References"     class="chunk"></div>
+  <div id="interlude3"     title="Interlude 3"    class="chunk"></div>
+  <div id="part7"          title="Part VII"       class="chunk">
+    <a href="https://dr.physics.wtf/html/part7.html"></a></div>
+  <div id="appendixA"      title="Random"         class="chunk">
+    <a href="https://dr.physics.wtf/html/random.html"></a></div>
+  <div id="appendixB"      title="Code"           class="chunk">
+    <a href="https://dr.physics.wtf/html/code.html"></a></div>
+  <div id="appendixC"      title="WordNet"        class="chunk">
+    <a href="https://dr.physics.wtf/html/wordnet.html"></a></div>
+  <div id="appendixD"      title="Git History"    class="chunk">
+    <a href="https://dr.physics.wtf/html/git.html"></a></div>
+  <div id="appendixE"      title="Publications"   class="chunk">
+    <a href="https://dr.physics.wtf/html/pubs.html"></a></div>
+  <div id="kthxbye"        title="kthxbye"        class="chunk"></div>
 </div>
+
+<div class="bar">
+  <div id="x-title"      title="Title"                    class="x-chunk"></div>
+  <div id="x-preface"    title="Preface"                  class="x-chunk"></div>
+  <div id="x-part1"      title="Hello World"              class="x-chunk"></div>
+  <div id="x-part2"      title="Tools of the Trade"       class="x-chunk"></div>
+  <div id="x-interlude1" title="Interlude 1"              class="x-chunk"></div>
+  <div id="x-part3"      title="The Core: Techno-Logic"   class="x-chunk"></div>
+  <div id="x-part4"     title="The Core: Techno-Practice" class="x-chunk"></div>
+  <div id="x-interlude2" title="Interlude 2"              class="x-chunk"></div>
+  <div id="x-part5"      title="Meta-Logicalysis"         class="x-chunk"></div>
+  <div id="x-part6"      title="Happily Ever After"       class="x-chunk"></div>
+  <div id="x-references" title="References"               class="x-chunk"></div>
+  <div id="x-interlude3" title="Interlude 3"              class="x-chunk"></div>
+  <div id="x-part7"      title="Appendices"               class="x-chunk"></div>
+  <div id="x-kthxbye"    title="kthxbye"                  class="x-chunk"></div>
+</div>
+
 <div class="labels"></div>
-
-<!-- <div class="bar">
-  <div id="x-preface" class="chunk"></div>
-  <div id="x-part1" class="chunk"></div>
-  <div id="x-part2" class="chunk"></div>
-  <div id="x-interlude1" class="chunk"></div>
-  <div id="x-part3" class="chunk"></div>
-  <div id="x-part4" class="chunk"></div>
-  <div id="x-interlude2" class="chunk"></div>
-  <div id="x-part5" class="chunk"></div>
-  <div id="x-part6" class="chunk"></div>
-  <div id="x-references" class="chunk"></div>
-  <div id="x-interlude3" class="chunk"></div>
-  <div id="x-part7" class="chunk"></div>
-</div> -->
-
-
 
 
 
